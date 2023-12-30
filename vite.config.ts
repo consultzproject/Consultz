@@ -9,4 +9,7 @@ export default defineConfig({
       src: __dirname + "/src",
     },
   },
+  server: {
+    port: 3000,
+  },
 });
