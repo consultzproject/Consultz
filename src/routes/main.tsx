@@ -1,5 +1,6 @@
 import * as Router from "react-router-dom";
 import * as Pages from "src/pages";
+import * as Layout from "src/layouts";
 
 export const Main = () =>
   Router.useRoutes([
@@ -9,7 +10,7 @@ export const Main = () =>
     },
     {
       path: "/*",
-      element: <Pages.Layout />,
+      element: <Layout.Main.Main />,
       children: [
         {
           path: "home",

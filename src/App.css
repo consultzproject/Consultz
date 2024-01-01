@@ -41,3 +41,23 @@
 .read-the-docs {
   color: #888;
 }
+
+.animated-text {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.animated-text p {
+  margin: 0;
+  animation: typing 3s steps(20) infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

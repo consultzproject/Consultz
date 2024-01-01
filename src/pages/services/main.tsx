@@ -1,5 +1,5 @@
-import React from "react";
+import * as Pages from "src/pages";
 
 export const Main = () => {
-  return <div>Main</div>;
+  return <Pages.Services.Views.Content />;
 };

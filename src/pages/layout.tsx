@@ -82,7 +82,7 @@ export const Layout = () => {
           borderBottom: "1px solid grey",
         }}
       >
-        <Mui.Container maxWidth="lg">
+        <Mui.Container maxWidth="xl">
           <Mui.Toolbar disableGutters>
             {/* laptop */}
             <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
