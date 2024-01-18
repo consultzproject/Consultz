@@ -17,7 +17,7 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 } */
-@import '@fortawesome/fontawesome-free/css/all.css';
+@import "@fortawesome/fontawesome-free/css/all.css";
 
 @keyframes logo-spin {
   from {
@@ -61,3 +61,4 @@
     width: 100%;
   }
 }
+

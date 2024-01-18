@@ -1,0 +1,29 @@
+#consultantmain {
+  height: 380px;
+  position: relative;
+  width: 100%;
+}
+#consultant {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+}
+
+/* .consultantmain:hover   */
+#consultantmain:hover > #consultant {
+  height: 70%;
+  transition: height 0.25s ease-in;
+}
+#consultantcontent {
+  position: absolute;
+  bottom: 50px;
+  transition: all 0.5s ease-in-out;
+  height: 0;
+}
+
+#consultantmain:hover > #consultantcontent {
+  height: 50px;
+  bottom: 40px;
+}

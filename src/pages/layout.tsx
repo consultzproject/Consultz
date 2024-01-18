@@ -26,8 +26,8 @@ export const Layout = () => {
       path: "/services",
     },
     {
-      name: "Projects",
-      path: "/projects",
+      name: "Blog",
+      path: "/blog",
     },
     {
       name: "News",
@@ -74,6 +74,7 @@ export const Layout = () => {
   React.useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
   });
+
   return (
     <div>
       <Mui.AppBar
@@ -130,7 +131,7 @@ export const Layout = () => {
                     padding: "10px 20px",
                   }}
                 >
-                  Let's Talk
+                  Let's Talkdasadsa
                 </Mui.Button>
                 <InstagramIcon />
                 <FacebookIcon />

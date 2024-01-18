@@ -1,2 +1,2 @@
 export * from "./main";
-// export * as Component from "./components";
+export * as Components from "./components";

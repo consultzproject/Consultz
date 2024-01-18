@@ -25,16 +25,34 @@ export const Main = () =>
           element: <Pages.Contact.Main />,
         },
         {
-          path: "news",
+          path: "submitprofile",
           element: <Pages.News.Main />,
         },
         {
-          path: "projects",
+          path: "blog",
           element: <Pages.Projects.Main />,
         },
         {
           path: "services",
           element: <Pages.Services.Main />,
+        },
+      ],
+    },
+    {
+      path: "blog/*",
+      element: <Layout.Main.Main />,
+      children: [
+        {
+          path: "blog1",
+          element: <Pages.Projects.Components.Blog1 />,
+        },
+        {
+          path: "blog2",
+          element: <Pages.Projects.Components.Blog2 />,
+        },
+        {
+          path: "blog3",
+          element: <Pages.Projects.Components.Blog3 />,
         },
       ],
     },

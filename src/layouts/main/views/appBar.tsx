@@ -25,12 +25,12 @@ export const AppBar = () => {
       path: "/services",
     },
     {
-      name: "Projects",
-      path: "/projects",
+      name: "Blog",
+      path: "/blog",
     },
     {
-      name: "News",
-      path: "/news",
+      name: "Submit Your Profile",
+      path: "/submitprofile",
     },
     {
       name: "Contact",
@@ -120,16 +120,6 @@ export const AppBar = () => {
               ))}
             </Mui.Box>
             <Mui.Stack direction="row" alignItems="center" spacing={2}>
-              <Mui.Button
-                variant="contained"
-                sx={{
-                  background: "#00aa6c",
-                  borderRadius: "20px",
-                  padding: "10px 20px",
-                }}
-              >
-                Let's Talk
-              </Mui.Button>
               <InstagramIcon />
               <FacebookIcon />
               <LinkedInIcon />

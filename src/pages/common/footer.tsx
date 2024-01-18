@@ -2,7 +2,7 @@ import * as Mui from "@mui/material";
 import * as Constant from "src/constant";
 export const Footer = () => {
   return (
-    <Mui.Stack>
+    <Mui.Stack width="100%">
       <Mui.Stack
         minHeight={400}
         sx={{

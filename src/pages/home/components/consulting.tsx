@@ -1,19 +1,24 @@
 import * as Mui from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import AddIcon from "@mui/icons-material/Add";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 export const Consulting = () => {
+  const isMobile = useMediaQuery("(max-width:600px)");
+
   return (
     <Mui.Stack
-      sx={{ padding: { xs: "10px 20px", md: "80px 150px" } }}
+      // sx={{ padding: { xs: "10px 20px", md: "80px 150px" } }}
+      sx={{ padding: { xs: 3, md: "80px 150px", sm: "10px 20px" },}}
       spacing={3}
     >
-      <Mui.Grid container spacing={4}>
+      <Mui.Grid container spacing={isMobile ? 1 : 4}>
         <Mui.Grid item md={8} xs={12}>
           <Mui.Typography
             fontWeight={700}
             maxWidth={50}
             color="#203556"
-            variant="h1"
+            variant={isMobile ? "h2" : "h1"}
           >
             Consulting Services
           </Mui.Typography>
