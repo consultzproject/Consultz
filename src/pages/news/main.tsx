@@ -1,7 +1,7 @@
 import React from "react";
 import * as Mui from "@mui/material";
 import * as Common from "src/pages/common";
-import Img1 from "src/assets/5.jpg";
+import Img1 from "src/assets/submitprofile/submit your profile.svg";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
 

@@ -2,31 +2,31 @@ import React from "react";
 import * as Mui from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import Img1 from "src/assets/1.jpg";
-import Img2 from "src/assets/2.jpg";
-import Img3 from "src/assets/3.jpg";
+// import Img1 from "src/assets/1.jpg";
+import Img2 from "src/assets/home/Mission Banner.svg";
+import Img3 from "src/assets/home/Vision Banner.svg";
 
 export const Expertise = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   const [data, setData] = React.useState<any>({
-    name: "history",
+    name: "Mission",
     content:
-      "Consultz is a leading consulting firm dedicated to helping businesses achieve their goals and navigate complex challenges. With a team of seasoned experts and a data-driven approach, we provide tailored solutions that drive sustainable growth and deliver tangible results. Our comprehensive services span strategic planning, operational optimization, and market expansion.",
-    img: Img1,
+      "Our mission is to drive transformative change and unlock the full potential of our clients by delivering strategic insights, innovative solutions, and actionable recommendations. Through collaborative partnerships, we aim to empower organizations to achieve their goals, enhance their competitive advantage, and thrive in an ever-evolving business landscape",
+    img: Img2,
     ProjectImplementation: "60",
-    PerformanceImprovement: "60",
+    PerformanceImprovement: "70",
     TrainingandDevelopment: "60",
   });
   const Values = [
-    {
-      name: "History",
-      content:
-        "Consultz is a leading consulting firm dedicated to helping businesses achieve their goals and navigate complex challenges. With a team of seasoned experts and a data-driven approach, we provide tailored solutions that drive sustainable growth and deliver tangible results. Our comprehensive services span strategic planning, operational optimization, and market expansion.",
-      img: Img1,
-      ProjectImplementation: "60",
-      PerformanceImprovement: "60",
-      TrainingandDevelopment: "60",
-    },
+    // {
+    //   name: "History",
+    //   content:
+    //     "Consultz is a leading consulting firm dedicated to helping businesses achieve their goals and navigate complex challenges. With a team of seasoned experts and a data-driven approach, we provide tailored solutions that drive sustainable growth and deliver tangible results. Our comprehensive services span strategic planning, operational optimization, and market expansion.",
+    //   img: Img1,
+    //   ProjectImplementation: "60",
+    //   PerformanceImprovement: "60",
+    //   TrainingandDevelopment: "60",
+    // },
     {
       name: "Mission",
       content:
@@ -80,11 +80,11 @@ export const Expertise = () => {
 
       <Mui.Grid container spacing={isMobile ? 1 : 4}>
         <Mui.Grid item xs={12} md={6}>
-          <Mui.Stack sx={{ height: "100%" }}>
+          <Mui.Stack sx={{ height: "350px" }}>
             <Mui.Typography fontFamily="Urbanist" fontSize="26px" pb={2}>
               Partnering for Progress and Prosperity
             </Mui.Typography>
-            <Mui.Stack height="100%">
+            <Mui.Stack height="300px">
               <img
                 src={data?.img}
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}

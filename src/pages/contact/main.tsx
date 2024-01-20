@@ -1,9 +1,10 @@
 import * as Mui from "@mui/material";
-import Image1 from "src/assets/2.jpg";
+import Image1 from "src/assets/contactus/Contact us.svg";
 import * as Common from "src/pages/common";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+
 export const Main = () => {
   return (
     <Mui.Stack>
@@ -15,8 +16,6 @@ export const Main = () => {
       </Mui.Stack>
       <Mui.Stack
         sx={{
-          // background: "white",
-          // zIndex: "999",
           position: "absolute",
           top: "0",
           height: "100vh",

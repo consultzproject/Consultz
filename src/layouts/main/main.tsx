@@ -6,7 +6,7 @@ export const Main = () => {
   return (
     <Mui.Box
       sx={{
-        pt: 9,
+        pt: 8,
       }}
     >
       <Layouts.Main.Views.AppBar />

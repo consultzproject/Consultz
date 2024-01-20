@@ -16,8 +16,8 @@ export const AppBar = () => {
     },
 
     {
-      name: "About Us",
-      path: "/aboutus",
+      name: "Testimonials",
+      path: "/testimonials",
     },
 
     {
@@ -66,8 +66,8 @@ export const AppBar = () => {
 
   const listenScrollEvent = () => {
     window.scrollY > 6
-      ? setHeaderColor("black !important")
-      : setHeaderColor("grey !important");
+      ? setHeaderColor("white !important")
+      : setHeaderColor("transparent !important");
   };
   // Similar to componentDidMount and componentDidUpdate:
   React.useEffect(() => {
@@ -76,8 +76,9 @@ export const AppBar = () => {
   return (
     <Mui.AppBar
       sx={{
-        backgroundColor: headerColor,
-        borderBottom: "1px solid grey",
+        backgroundColor: "white",
+        // borderBottom: "1px solid grey",
+        // backdropFilter: "blur(5px)",
       }}
     >
       <Mui.Container maxWidth="xl">
@@ -92,6 +93,7 @@ export const AppBar = () => {
               display: { xs: "none", md: "flex" },
               fontWeight: 700,
               textDecoration: "none",
+              color: "black",
             }}
           >
             Consultz.
@@ -109,10 +111,11 @@ export const AppBar = () => {
                   onClick={() => Navigate(page.path)}
                   sx={{
                     my: 2,
-                    color: "white",
+                    // color: "white",
                     display: "block",
                     textTransform: "capitalize",
                     background: PathUrl.includes(page.path) ? "green" : "",
+                    color: "black",
                   }}
                 >
                   {page.name}
@@ -120,9 +123,9 @@ export const AppBar = () => {
               ))}
             </Mui.Box>
             <Mui.Stack direction="row" alignItems="center" spacing={2}>
-              <InstagramIcon />
-              <FacebookIcon />
-              <LinkedInIcon />
+              <InstagramIcon sx={{ color: "black" }} />
+              <FacebookIcon sx={{ color: "black" }} />
+              <LinkedInIcon sx={{ color: "black" }} />
             </Mui.Stack>
           </Mui.Stack>
 

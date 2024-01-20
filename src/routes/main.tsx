@@ -17,7 +17,7 @@ export const Main = () =>
           element: <Pages.Home.Main />,
         },
         {
-          path: "aboutus",
+          path: "testimonials",
           element: <Pages.Aboutus.Main />,
         },
         {

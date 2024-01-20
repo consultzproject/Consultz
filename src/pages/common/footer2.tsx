@@ -1,11 +1,10 @@
 import React from "react";
 import * as Mui from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Service3 from "src/assets/6.webp";
+import Service3 from "src/assets/home/Footer Banner.svg";
 import * as Constant from "src/constant";
 import * as MuiIcons from "@mui/icons-material";
 import * as Router from "react-router-dom";
-
 
 export const Footer2 = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -20,7 +19,7 @@ export const Footer2 = () => {
         overflow: "hidden", // Ensures that the image doesn't overflow the container
       }}
     >
-      <div
+      {/* <div
         style={{
           position: "absolute",
           top: "0",
@@ -30,7 +29,8 @@ export const Footer2 = () => {
           background: `url(${Service3}) center/cover no-repeat`,
           filter: "blur(10px)", // Apply a background lens effect (blur)
         }}
-      />
+      /> */}
+      <img src={Service3} style={{ filter: "blur(1px)" }} />
       <div
         style={{
           position: "absolute",
@@ -84,4 +84,3 @@ export const Footer2 = () => {
     </Mui.Stack>
   );
 };
-
