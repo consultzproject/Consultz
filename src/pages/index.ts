@@ -1,7 +1,7 @@
 export * from "./layout";
 export * as Home from "./home";
 export * as Contact from "./contact";
-export * as News from "./news";
-export * as Projects from "./projects";
+export * as SubmitProfile from "./submitprofile";
+export * as Blog from "./blog";
 export * as Services from "./services";
-export * as Aboutus from "./aboutus";
+export * as Testimonials from "./testimonials";

@@ -8,6 +8,7 @@ export const Main = () => {
     <Mui.Stack>
       <Components.Banner />
       <Components.Consulting />
+      <Components.Insights />
       <Components.Expertise />
       <Components.Process />
       <Components.Consultants />

@@ -18,7 +18,7 @@ export const Main = () =>
         },
         {
           path: "testimonials",
-          element: <Pages.Aboutus.Main />,
+          element: <Pages.Testimonials.Main />,
         },
         {
           path: "contact",
@@ -26,11 +26,11 @@ export const Main = () =>
         },
         {
           path: "submitprofile",
-          element: <Pages.News.Main />,
+          element: <Pages.SubmitProfile.Main />,
         },
         {
           path: "blog",
-          element: <Pages.Projects.Main />,
+          element: <Pages.Blog.Main />,
         },
         {
           path: "services",
@@ -44,15 +44,15 @@ export const Main = () =>
       children: [
         {
           path: "blog1",
-          element: <Pages.Projects.Components.Blog1 />,
+          element: <Pages.Blog.Components.Blog1 />,
         },
         {
           path: "blog2",
-          element: <Pages.Projects.Components.Blog2 />,
+          element: <Pages.Blog.Components.Blog2 />,
         },
         {
           path: "blog3",
-          element: <Pages.Projects.Components.Blog3 />,
+          element: <Pages.Blog.Components.Blog3 />,
         },
       ],
     },
