@@ -19,8 +19,8 @@ export const Insights = () => {
 
       <section className="container">
         <p className="loop-text">
-          Expert Insights &nbsp;Smart Solutions&nbsp; Navigating Complexity
-          &nbsp;Strategic Excellence
+          Expert Insights &nbsp; &nbsp; &nbsp;Smart Solutions&nbsp; &nbsp;
+          &nbsp; Navigating Complexity &nbsp; &nbsp; &nbsp;Strategic Excellence
         </p>
       </section>
 
