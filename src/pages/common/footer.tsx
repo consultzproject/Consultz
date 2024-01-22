@@ -25,7 +25,7 @@ export const Footer = () => {
           <Mui.Grid item xs={12} md={4}>
             <Mui.Stack color="white">
               <Mui.Typography fontWeight={600}>
-                {Constant?.Service_Content?.officename}
+                {/* {Constant?.Service_Content?.officename} */}
               </Mui.Typography>
               <Mui.Typography pt={3}>
                 {Constant?.Service_Content?.officenumber}
@@ -57,7 +57,7 @@ export const Footer = () => {
           fontFamily="urbanist"
           fontWeight="500"
         >
-          - 2 0 2 3 &nbsp; C O N S U L T Z &nbsp; C O. -
+          {/* - 2 0 2 3 &nbsp; C O N S U L T Z &nbsp; C O. - */}
         </Mui.Typography>
       </Mui.Stack>
     </Mui.Stack>

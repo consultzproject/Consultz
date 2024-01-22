@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Logo from "src/assets/Logo.png";
 
 export const AppBar = () => {
   const Pages = [
@@ -14,16 +15,17 @@ export const AppBar = () => {
       name: "Home",
       path: "/home",
     },
+    {
+      name: "Services",
+      path: "/services",
+    },
 
     {
       name: "Testimonials",
       path: "/testimonials",
     },
 
-    {
-      name: "Services",
-      path: "/services",
-    },
+   
     {
       name: "Blog",
       path: "/blog",
@@ -85,7 +87,7 @@ export const AppBar = () => {
         <Mui.Toolbar disableGutters>
           {/* laptop */}
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-
+{/* 
           <Mui.Typography
             variant="h5"
             sx={{
@@ -97,7 +99,13 @@ export const AppBar = () => {
             }}
           >
             Consultz.
-          </Mui.Typography>
+          </Mui.Typography> */}
+              <Mui.Stack>
+              <img
+                src={Logo}
+                style={{ width: "100px", height: "100px",}}
+              />
+            </Mui.Stack>
           <Mui.Stack
             direction="row"
             alignItems="center"

@@ -59,7 +59,7 @@ export const Main = () => {
                     fontWeight={800}
                     fontSize={24}
                   >
-                    +12 9887 234 122
+                    04916030669
                   </Mui.Typography>
 
                   <Mui.Stack
