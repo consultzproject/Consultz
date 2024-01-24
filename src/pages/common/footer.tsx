@@ -3,6 +3,8 @@ import * as Constant from "src/constant";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
+import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import "./common.css";
 export const Footer = () => {
   return (
@@ -20,18 +22,32 @@ export const Footer = () => {
       <Mui.Grid container spacing={4}>
         <Mui.Grid item xs={12} md={6}>
           <Mui.Stack color="white">
-            <Mui.Typography fontWeight={600}>
-              {/* {Constant?.Service_Content?.officename} */}
-            </Mui.Typography>
-            <Mui.Typography pt={3} fontSize={20} fontFamily="urbanist">
-              {Constant?.Service_Content?.officenumber}
-            </Mui.Typography>
-            {/* <Mui.Typography>
-                {Constant?.Service_Content?.officemailid}
-              </Mui.Typography> */}
-            <Mui.Typography pt={3} fontSize={20} fontFamily="urbanist">
-              {Constant?.Service_Content?.officeaddress}
-            </Mui.Typography>
+            <Mui.Stack direction="row" alignItems="center">
+              <PhoneRoundedIcon
+                sx={{
+                  marginTop: "20px",
+                  paddingRight: "5px",
+                  fontSize: "40px",
+                }}
+              />
+              <Mui.Typography pt={4} fontSize={23} fontFamily="urbanist">
+                {Constant?.Service_Content?.officenumber}
+              </Mui.Typography>
+            </Mui.Stack>
+
+            <Mui.Stack direction="row" alignItems="center">
+              <LocationOnRoundedIcon
+                sx={{
+                  marginTop: "20px",
+                  paddingRight: "5px",
+                  fontSize: "40px",
+                  color: "red",
+                }}
+              />{" "}
+              <Mui.Typography pt={4} fontSize={23} fontFamily="urbanist">
+                {Constant?.Service_Content?.officeaddress}
+              </Mui.Typography>
+            </Mui.Stack>
           </Mui.Stack>
         </Mui.Grid>
         <Mui.Grid item xs={12} md={6}>
