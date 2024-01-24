@@ -96,3 +96,20 @@
     transform: translateX(-100%);
   }
 }
+
+.examplediv {
+  /* height: 500px;
+  width: 500px; */
+  animation: zoom-in-zoom-out 3s ease-in-out infinite;
+}
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  /* 50% {
+    transform: scale(1.2, 1.2);
+  } */
+  100% {
+    transform: scale(1.1, 1.1);
+  }
+}

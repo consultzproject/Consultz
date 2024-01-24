@@ -5,9 +5,11 @@ import * as Layouts from "src/layouts";
 export const Main = () => {
   return (
     <Mui.Box
-      sx={{
-        pt: 8,
-      }}
+      sx={
+        {
+          // pt: 8,
+        }
+      }
     >
       <Layouts.Main.Views.AppBar />
       <Router.Outlet />

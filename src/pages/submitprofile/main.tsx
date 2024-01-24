@@ -19,8 +19,14 @@ export const Main = () => {
 
   return (
     <Mui.Grid container>
+      <Mui.Grid item xs={12}>
+        <Mui.Stack sx={{ height: "100px", background: "#4a4a4a" }} />
+      </Mui.Grid>
       <Mui.Grid item xs={12} md={6}>
-        <Mui.Stack height="90vh">
+        <Mui.Stack
+          height="90vh"
+          sx={{ padding: { xs: "30px 20px", md: "40px 60px 60px 60px" } }}
+        >
           <img
             src={Img1}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
@@ -31,9 +37,14 @@ export const Main = () => {
         item
         xs={12}
         md={6}
-        sx={{ padding: { xs: "30px 20px", md: "30px 120px" } }}
+        // sx={{ padding: { xs: "30px 20px", md: "30px 120px" } }}
       >
-        <Mui.Stack spacing={2} width="100%" alignItems="center">
+        <Mui.Stack
+          spacing={2}
+          width="100%"
+          alignItems="center"
+          sx={{ padding: { xs: "30px 20px", md: "50px 120px 60px 120px" } }}
+        >
           <Mui.Typography
             // variant={{ md: "h5", xs: "h6" }}
             textAlign="center"
@@ -84,8 +95,8 @@ export const Main = () => {
           <Mui.Stack
             sx={{
               width: "100px",
-              height: "100px",
-              borderRadius: "50px",
+              height: "40px",
+              borderRadius: "10px",
               alignItems: "center",
               justifyContent: "center",
               alignSelf: "center",

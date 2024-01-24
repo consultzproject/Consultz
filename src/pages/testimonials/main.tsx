@@ -5,9 +5,24 @@ import Image from "src/assets/testimonials/AdobeStock-9OI4A1wQN2 (1).svg";
 export const Main = () => {
   return (
     <Mui.Stack>
+      <Mui.Stack height="90vh">
+        <img
+          src={Image}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            filter: "brightness(50%)",
+          }}
+        />
+      </Mui.Stack>
       <Mui.Grid container>
         <Mui.Grid item xs={12} md={6}>
-          <Mui.Stack height="90vh">
+          <Mui.Stack
+            height="90vh"
+            sx={{ padding: { xs: "30px 20px", md: "40px 60px 60px 60px" } }}
+            id="imagezoom"
+          >
             <img
               src={Image}
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
@@ -37,6 +52,7 @@ export const Main = () => {
             </Mui.Typography>
           </Mui.Stack>
         </Mui.Grid>
+
         <Common.Footer />
       </Mui.Grid>
     </Mui.Stack>

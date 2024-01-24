@@ -10,7 +10,7 @@ export const Footer2 = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   const { Service_Content }: any = Constant;
   const navigate = Router.useNavigate();
-
+  const PathUrl = window.location.pathname;
   return (
     <Mui.Stack
       style={{
@@ -19,17 +19,6 @@ export const Footer2 = () => {
         overflow: "hidden", // Ensures that the image doesn't overflow the container
       }}
     >
-      {/* <div
-        style={{
-          position: "absolute",
-          top: "0",
-          left: "0",
-          width: "100%",
-          height: "100%",
-          background: `url(${Service3}) center/cover no-repeat`,
-          filter: "blur(10px)", // Apply a background lens effect (blur)
-        }}
-      /> */}
       <img src={Service3} style={{ filter: "blur(1px)" }} />
       <div
         style={{
@@ -41,6 +30,7 @@ export const Footer2 = () => {
           color: "#fff",
           flexDirection: "column",
           zIndex: 1, // Ensure this content is above the background image
+          display: PathUrl?.includes("blog") ? "none" : "block",
         }}
       >
         <Mui.Typography

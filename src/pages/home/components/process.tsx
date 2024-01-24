@@ -8,6 +8,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import SettingsIcon from "@mui/icons-material/Settings";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
 import VideoLabelIcon from "@mui/icons-material/VideoLabel";
+import MovingIcon from "@mui/icons-material/Moving";
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
@@ -70,7 +71,7 @@ function ColorlibStepIcon(props: StepIconProps) {
     1: <SettingsIcon />,
     2: <GroupAddIcon />,
     3: <VideoLabelIcon />,
-    4: <VideoLabelIcon />,
+    4: <MovingIcon />,
   };
 
   return (
@@ -90,19 +91,19 @@ const steps = [
       "The consulting company initiates contact with the client or responds to a client's request for consulting services.",
   },
   {
-    title: "Project Scoping and Proposal",
+    title: "Talent Requirement Analysis ",
     content:
-      "The consulting company conducts a thorough assessment of the client's requirements and expectations.",
+      "The requirement will be subjected to a thorough analysis. Our expert team will enable us to fetch from the appropriate talent pool.",
   },
   {
-    title: "Agreement and Contracting",
+    title: "Matching Our Resources With Your Requirements",
     content:
-      "Once the client approves the proposal, both parties enter into a formal agreement or contract.",
+      "With Sayal’s robust database we would initiate the aligning of client’s specifications.",
   },
   {
-    title: "Solution Development",
+    title: "Resource Deployment",
     content:
-      "They develop a strategic plan or roadmap to address the client's specific needs and achieve their desired outcomes.",
+      "Making sure that the most apt resources are deployed at the earliest.",
   },
 ];
 
@@ -110,7 +111,10 @@ export const Process = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
 
   return (
-    <Stack sx={{ width: "100%", padding: "10px 60px" }} spacing={4}>
+    <Stack
+      sx={{ width: "100%", padding: "80px 120px 150px 120px" }}
+      spacing={4}
+    >
       <Stepper
         alternativeLabel
         activeStep={3}
@@ -122,7 +126,11 @@ export const Process = () => {
             <StepLabel StepIconComponent={ColorlibStepIcon}>
               <Mui.Stack sx={{ alignItems: "start" }}>
                 <Mui.Typography
-                  sx={{ fontSize: "20px", fontFamily: "urbanist" }}
+                  sx={{
+                    fontSize: "20px",
+                    fontFamily: "urbanist",
+                    textAlign: "start",
+                  }}
                 >
                   {label.title}
                 </Mui.Typography>

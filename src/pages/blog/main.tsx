@@ -12,7 +12,10 @@ export const Main = () => {
 
   return (
     <>
-      <Mui.Stack sx={{ padding: { xs: "30px 20px", md: "60px 120px" } }}>
+      <Mui.Stack sx={{ height: "100px", background: "#4a4a4a" }} />
+      <Mui.Stack
+        sx={{ padding: { xs: "30px 20px", md: "100px 120px 60px 120px" } }}
+      >
         <Mui.Grid container spacing={8}>
           <Mui.Grid item xs={12}>
             <Mui.Typography
@@ -71,27 +74,10 @@ export const Main = () => {
                 <Mui.Typography fontSize={20}>
                   Top In-Demand Tech Skills and How to Source Them
                 </Mui.Typography>
-                {/* <Mui.Typography fontSize={15} color="grey">
-                SUPPLY CHAIN CONSULTANT
-              </Mui.Typography> */}
               </Mui.Stack>
             </Mui.Stack>
           </Mui.Grid>
         </Mui.Grid>
-
-        {/* <Mui.Stack
-        width="100%"
-        sx={{ padding: { xs: "40px 0px", md: "200px 0 0 0 " } }}
-      >
-        <Mui.Typography
-          textAlign="center"
-          fontSize="15px"
-          fontFamily="urbanist"
-          fontWeight="500"
-        >
-          - 2 0 2 3 &nbsp; C O N S U L T Z &nbsp; C O. -
-        </Mui.Typography>
-      </Mui.Stack> */}
       </Mui.Stack>
       <Common.Footer2 />
       <Common.Footer />

@@ -1,9 +1,11 @@
 import React from "react";
 import * as Mui from "@mui/material";
-import BannerImg from "src/assets/banner.jpg";
-import Service1 from "src/assets/4.jpg";
-import Service2 from "src/assets/5.jpg";
-import Service3 from "src/assets/6.webp";
+import BannerImg from "src/assets/services/ServicesBanner.svg";
+import Service1 from "src/assets/services/IT Talent Management.svg";
+import Service2 from "src/assets/services/International Business Consulting.svg";
+import Service3 from "src/assets/services/Project Out Sourcing.svg";
+import Service4 from "src/assets/services/Tech Consulting.svg";
+import Service5 from "src/assets/6.webp";
 import AddIcon from "@mui/icons-material/Add";
 import * as MuiIcons from "@mui/icons-material";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -47,7 +49,12 @@ export const Content = () => {
       <Mui.Stack style={{ height: isMobile ? "auto" : "80vh" }}>
         <img
           src={BannerImg}
-          style={{ height: "100%", width: "100%", objectFit: "cover" }}
+          style={{
+            height: "100%",
+            width: "100%",
+            objectFit: "cover",
+            filter: "brightness(50%)",
+          }}
         />
       </Mui.Stack>
       <Mui.Stack
@@ -66,7 +73,6 @@ export const Content = () => {
             >
               {Service_Content?.header}
             </Mui.Typography>
-            <Mui.Divider sx={{ width: "100%" }} />
           </Mui.Grid>
           <Mui.Grid item container md={6} xs={12} alignItems="center">
             <Mui.Grid item md={6} xs={12}>
@@ -124,7 +130,7 @@ export const Content = () => {
               </Mui.Stack>
             </Mui.Grid>
           </Mui.Grid>
-          <Mui.Grid item md={12} xs={12}>
+          <Mui.Grid item md={12} xs={12} pb={5}>
             <Mui.Typography
               fontFamily="Urbanist"
               fontSize="32px"
@@ -136,75 +142,120 @@ export const Content = () => {
             </Mui.Typography>
             <Mui.Divider sx={{ width: "100%", mt: 1, mb: 1 }} />
           </Mui.Grid>
+          {/* part 1 */}
           <Mui.Grid item lg={6} md={12} xs={12} ref={scrollRef1}>
-            <Mui.Stack style={{ height: isMobile ? "auto" : "100vh" }}>
+            <Mui.Stack
+              style={{ height: isMobile ? "auto" : "50vh" }}
+              id="imagezoom"
+            >
+              <img
+                src={Service1}
+                style={{ height: "100%", width: "100%", objectFit: "cover" }}
+              />
+            </Mui.Stack>
+          </Mui.Grid>
+          <Mui.Grid item lg={6} md={12} xs={12}>
+            <Mui.Stack spacing={1}>
+              <Mui.Stack direction="column">
+                <Mui.Typography variant="h5" color="black">
+                  {Service_Content?.subtitle1}
+                </Mui.Typography>
+                <Mui.Divider sx={{ width: "100%", mb: 1, mt: 1 }} />
+                <Mui.Typography variant="subtitle1" p={2} color="#536c82">
+                  {Service_Content?.subtitledescription1}
+                </Mui.Typography>
+              </Mui.Stack>
+            </Mui.Stack>
+          </Mui.Grid>
+          {/* part2 */}
+          <Mui.Grid item lg={6} md={12} xs={12} ref={scrollRef2}>
+            <Mui.Stack spacing={1}>
+              <Mui.Stack direction="column">
+                <Mui.Typography variant="h5" color="black">
+                  {Service_Content?.subtitle2}
+                </Mui.Typography>
+                <Mui.Divider sx={{ width: "100%", mb: 2, mt: 2 }} />
+                <Mui.Typography variant="subtitle1" p={2} color="#536c82">
+                  {Service_Content?.subtitledescription2}
+                </Mui.Typography>
+              </Mui.Stack>
+            </Mui.Stack>
+          </Mui.Grid>
+          <Mui.Grid item lg={6} md={12} xs={12}>
+            <Mui.Stack
+              style={{ height: isMobile ? "auto" : "50vh" }}
+              id="imagezoom"
+            >
               <img
                 src={Service2}
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
               />
             </Mui.Stack>
           </Mui.Grid>
-          <Mui.Grid item lg={6} md={12} xs={12}>
-            <Mui.Stack spacing={4} mt={4}>
-              <Mui.Stack spacing={1}>
-                <Mui.Stack direction="column">
-                  <Mui.Typography variant="h5" color="#536c82">
-                    {Service_Content?.subtitle1}
-                  </Mui.Typography>
-                  <Mui.Divider sx={{ width: "100%", mb: 1, mt: 1 }} />
-                  <Mui.Typography variant="subtitle1" p={2} color="#536c82">
-                    {Service_Content?.subtitledescription1}
-                  </Mui.Typography>
-                </Mui.Stack>
 
-                <Mui.Stack direction="column" ref={scrollRef2}>
-                  <Mui.Typography variant="h5" color="#536c82">
-                    {Service_Content?.subtitle2}
-                  </Mui.Typography>
-                  <Mui.Divider sx={{ width: "100%", mb: 2, mt: 2 }} />
-                  <Mui.Typography variant="subtitle1" p={2} color="#536c82">
-                    {Service_Content?.subtitledescription2}
-                  </Mui.Typography>
-                </Mui.Stack>
-              </Mui.Stack>
-            </Mui.Stack>
-          </Mui.Grid>
-          <Mui.Grid item lg={6} md={12} xs={12} ref={scrollRef3} sx={{ mt: 7 }}>
-            <Mui.Stack spacing={4} mt={4}>
-              <Mui.Typography fontSize="28px" color="#536c82" fontWeight={400}>
-                Expert services for development and interior design.
-              </Mui.Typography>
-              <Mui.Stack spacing={1}>
-                <Mui.Stack direction="column">
-                  <Mui.Typography variant="h5" color="#536c82">
-                    {Service_Content?.subtitle3}
-                  </Mui.Typography>
-                  <Mui.Divider sx={{ width: "100%", mb: 1, mt: 1 }} />
-                  <Mui.Typography variant="subtitle1" p={2} color="#536c82">
-                    {Service_Content?.subtitledescription3}
-                  </Mui.Typography>
-                </Mui.Stack>
+          {/* part2 header */}
 
-                <Mui.Stack direction="column" ref={scrollRef4}>
-                  <Mui.Typography variant="h5" color="#536c82">
-                    {Service_Content?.subtitle4}
-                  </Mui.Typography>
-                  <Mui.Divider sx={{ width: "100%", mb: 1, mt: 1 }} />
-                  <Mui.Typography variant="subtitle1" p={2} color="#536c82">
-                    {Service_Content?.subtitledescription4}
-                  </Mui.Typography>
-                </Mui.Stack>
-              </Mui.Stack>
-            </Mui.Stack>
+          <Mui.Grid item md={12} xs={12} pb={5}>
+            <Mui.Typography
+              fontFamily="Urbanist"
+              fontSize="32px"
+              fontWeight={500}
+              pt={2}
+              color="#536c82"
+            >
+              Expert services for development and interior design.
+            </Mui.Typography>
+            <Mui.Divider sx={{ width: "100%", mt: 1, mb: 1 }} />
           </Mui.Grid>
-          <Mui.Grid item lg={6} md={12} xs={12} sx={{ mt: 7 }}>
-            <Mui.Stack style={{ height: isMobile ? "auto" : "100vh" }}>
+          {/* part3 */}
+
+          <Mui.Grid item lg={6} md={12} xs={12} ref={scrollRef4}>
+            <Mui.Stack
+              style={{ height: isMobile ? "auto" : "50vh" }}
+              id="imagezoom"
+            >
               <img
-                src={Service1}
+                src={Service4}
                 style={{ height: "100%", width: "100%", objectFit: "cover" }}
               />
             </Mui.Stack>
-          </Mui.Grid>{" "}
+          </Mui.Grid>
+          <Mui.Grid item lg={6} md={12} xs={12}>
+            <Mui.Stack direction="column" ref={scrollRef4}>
+              <Mui.Typography variant="h5" color="black">
+                {Service_Content?.subtitle4}
+              </Mui.Typography>
+              <Mui.Divider sx={{ width: "100%", mb: 1, mt: 1 }} />
+              <Mui.Typography variant="subtitle1" p={2} color="#536c82">
+                {Service_Content?.subtitledescription4}
+              </Mui.Typography>
+            </Mui.Stack>
+          </Mui.Grid>
+
+          {/* part4 */}
+          <Mui.Grid item lg={6} md={12} xs={12} ref={scrollRef3}>
+            <Mui.Stack direction="column">
+              <Mui.Typography variant="h5" color="black">
+                {Service_Content?.subtitle3}
+              </Mui.Typography>
+              <Mui.Divider sx={{ width: "100%", mb: 1, mt: 1 }} />
+              <Mui.Typography variant="subtitle1" p={2} color="#536c82">
+                {Service_Content?.subtitledescription3}
+              </Mui.Typography>
+            </Mui.Stack>
+          </Mui.Grid>
+          <Mui.Grid item lg={6} md={12} xs={12} sx={{ mt: 7 }}>
+            <Mui.Stack
+              style={{ height: isMobile ? "auto" : "50vh" }}
+              id="imagezoom"
+            >
+              <img
+                src={Service3}
+                style={{ height: "100%", width: "100%", objectFit: "cover" }}
+              />
+            </Mui.Stack>
+          </Mui.Grid>
+
           <Mui.Grid item xs={12} md={12} sx={{ mt: { md: 8, xs: 2 } }}>
             <Mui.Stack
               direction={{ md: "row", xs: "column" }}
@@ -260,7 +311,7 @@ export const Content = () => {
             left: "0",
             width: "100%",
             height: "100%",
-            background: `url(${Service3}) center/cover no-repeat`,
+            background: `url(${Service5}) center/cover no-repeat`,
             filter: "blur(10px)", // Apply a background lens effect (blur)
           }}
         />

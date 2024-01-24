@@ -1,0 +1,12 @@
+.footerIcon {
+  color: white;
+  font-size: 2rem !important;
+  cursor: pointer;
+  text-align: center;
+  /* padding: 10px; */
+}
+.footerIcon:hover {
+  font-size: 2.3rem !important;
+  color: chartreuse;
+  animation: logo-spin infinite 8s linear;
+}

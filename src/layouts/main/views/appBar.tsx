@@ -25,7 +25,6 @@ export const AppBar = () => {
       path: "/testimonials",
     },
 
-   
     {
       name: "Blog",
       path: "/blog",
@@ -64,7 +63,9 @@ export const AppBar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  const [headerColor, setHeaderColor] = React.useState("grey !important");
+  const [headerColor, setHeaderColor] = React.useState(
+    "transparent !important"
+  );
 
   const listenScrollEvent = () => {
     window.scrollY > 6
@@ -78,8 +79,8 @@ export const AppBar = () => {
   return (
     <Mui.AppBar
       sx={{
-        backgroundColor: "white",
-        // borderBottom: "1px solid grey",
+        backgroundColor: headerColor,
+        borderBottom: "1px solid grey",
         // backdropFilter: "blur(5px)",
       }}
     >
@@ -87,7 +88,7 @@ export const AppBar = () => {
         <Mui.Toolbar disableGutters>
           {/* laptop */}
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-{/* 
+          {/* 
           <Mui.Typography
             variant="h5"
             sx={{
@@ -100,12 +101,9 @@ export const AppBar = () => {
           >
             Consultz.
           </Mui.Typography> */}
-              <Mui.Stack>
-              <img
-                src={Logo}
-                style={{ width: "100px", height: "100px",}}
-              />
-            </Mui.Stack>
+          <Mui.Stack>
+            <img src={Logo} style={{ width: "100px", height: "100px" }} />
+          </Mui.Stack>
           <Mui.Stack
             direction="row"
             alignItems="center"
@@ -119,11 +117,14 @@ export const AppBar = () => {
                   onClick={() => Navigate(page.path)}
                   sx={{
                     my: 2,
-                    // color: "white",
+                    color: window.scrollY > 6 ? "black" : "white",
                     display: "block",
                     textTransform: "capitalize",
                     background: PathUrl.includes(page.path) ? "green" : "",
-                    color: "black",
+                    fontFamily: "urbanist",
+                    fontWeight: 600,
+                    fontSize: "18px",
+                    padding: "0 15px",
                   }}
                 >
                   {page.name}
@@ -131,9 +132,15 @@ export const AppBar = () => {
               ))}
             </Mui.Box>
             <Mui.Stack direction="row" alignItems="center" spacing={2}>
-              <InstagramIcon sx={{ color: "black" }} />
-              <FacebookIcon sx={{ color: "black" }} />
-              <LinkedInIcon sx={{ color: "black" }} />
+              <InstagramIcon
+                sx={{ color: window.scrollY > 6 ? "black" : "white" }}
+              />
+              <FacebookIcon
+                sx={{ color: window.scrollY > 6 ? "black" : "white" }}
+              />
+              <LinkedInIcon
+                sx={{ color: window.scrollY > 6 ? "black" : "white" }}
+              />
             </Mui.Stack>
           </Mui.Stack>
 

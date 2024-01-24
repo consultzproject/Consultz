@@ -11,7 +11,7 @@ export const Expertise = () => {
   const [data, setData] = React.useState<any>({
     name: "Mission",
     content:
-      "Our mission is to drive transformative change and unlock the full potential of our clients by delivering strategic insights, innovative solutions, and actionable recommendations. Through collaborative partnerships, we aim to empower organizations to achieve their goals, enhance their competitive advantage, and thrive in an ever-evolving business landscape",
+      "At Seyal.io, our mission is to elevate businesses by leveraging the wide spread talent pool across the globe. We provide tailored consulting services, guiding organizations to implement, optimize, and evolve the businesses. Through strategic partnerships, continuous innovation, and a commitment to excellence, we aim to reshape the future of the workforce, driving efficiency, engagement, and success for our clients.",
     img: Img2,
     ProjectImplementation: "60",
     PerformanceImprovement: "70",
@@ -30,7 +30,7 @@ export const Expertise = () => {
     {
       name: "Mission",
       content:
-        "Our mission is to drive transformative change and unlock the full potential of our clients by delivering strategic insights, innovative solutions, and actionable recommendations. Through collaborative partnerships, we aim to empower organizations to achieve their goals, enhance their competitive advantage, and thrive in an ever-evolving business landscape",
+        "At Seyal.io, our mission is to elevate businesses by leveraging the wide spread talent pool across the globe. We provide tailored consulting services, guiding organizations to implement, optimize, and evolve the businesses. Through strategic partnerships, continuous innovation, and a commitment to excellence, we aim to reshape the future of the workforce, driving efficiency, engagement, and success for our clients.",
       img: Img2,
       ProjectImplementation: "60",
       PerformanceImprovement: "70",
@@ -39,7 +39,7 @@ export const Expertise = () => {
     {
       name: "Vision",
       content:
-        "This vision statement reflects the consulting company's commitment to helping organizations succeed and flourish in an ever-evolving business environment. It emphasizes the company's focus on empowering clients by providing them with the knowledge, strategies, and resources they need to navigate and thrive amidst constant change.",
+        "To be a catalyst for organizational success through innovative approaches. Empowering businesses to thrive by revolutionizing their human capital strategies in the dynamic landscape of the digital age.",
       img: Img3,
       ProjectImplementation: "60",
       PerformanceImprovement: "60",
@@ -55,13 +55,14 @@ export const Expertise = () => {
       <Mui.Stack
         direction={{ xs: "column", md: "row" }}
         justifyContent="space-between"
+        alignItems="center"
       >
         <Mui.Typography
           fontWeight={700}
           color="#203556"
-          variant={isMobile ? "h2" : "h1"}
+          variant={isMobile ? "h2" : "h2"}
         >
-          Our Expertise
+          Talent Management Planning
         </Mui.Typography>
 
         <Mui.Typography
@@ -82,9 +83,9 @@ export const Expertise = () => {
         <Mui.Grid item xs={12} md={6}>
           <Mui.Stack sx={{ height: "350px" }}>
             <Mui.Typography fontFamily="Urbanist" fontSize="26px" pb={2}>
-              Partnering for Progress and Prosperity
+              Efficient Cost Reduction
             </Mui.Typography>
-            <Mui.Stack height="300px">
+            <Mui.Stack height="300px" id="imagezoom">
               <img
                 src={data?.img}
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}

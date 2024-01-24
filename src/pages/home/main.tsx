@@ -11,7 +11,7 @@ export const Main = () => {
       <Components.Insights />
       <Components.Expertise />
       <Components.Process />
-      <Components.Consultants />
+      {/* <Components.Consultants /> */}
       <Common.Footer2 />
       <Common.Footer />
     </Mui.Stack>
