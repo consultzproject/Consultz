@@ -161,7 +161,7 @@ export const Content = () => {
                   {Service_Content?.subtitle1}
                 </Mui.Typography>
                 <Mui.Divider sx={{ width: "100%", mb: 1, mt: 1 }} />
-                <Mui.Typography variant="subtitle1" p={2} color="#536c82">
+                <Mui.Typography variant="subtitle1" color="#536c82">
                   {Service_Content?.subtitledescription1}
                 </Mui.Typography>
               </Mui.Stack>
@@ -175,7 +175,7 @@ export const Content = () => {
                   {Service_Content?.subtitle2}
                 </Mui.Typography>
                 <Mui.Divider sx={{ width: "100%", mb: 2, mt: 2 }} />
-                <Mui.Typography variant="subtitle1" p={2} color="#536c82">
+                <Mui.Typography variant="subtitle1" color="#536c82">
                   {Service_Content?.subtitledescription2}
                 </Mui.Typography>
               </Mui.Stack>
@@ -226,7 +226,7 @@ export const Content = () => {
                 {Service_Content?.subtitle4}
               </Mui.Typography>
               <Mui.Divider sx={{ width: "100%", mb: 1, mt: 1 }} />
-              <Mui.Typography variant="subtitle1" p={2} color="#536c82">
+              <Mui.Typography variant="subtitle1" color="#536c82">
                 {Service_Content?.subtitledescription4}
               </Mui.Typography>
             </Mui.Stack>
@@ -239,7 +239,7 @@ export const Content = () => {
                 {Service_Content?.subtitle3}
               </Mui.Typography>
               <Mui.Divider sx={{ width: "100%", mb: 1, mt: 1 }} />
-              <Mui.Typography variant="subtitle1" p={2} color="#536c82">
+              <Mui.Typography variant="subtitle1" color="#536c82">
                 {Service_Content?.subtitledescription3}
               </Mui.Typography>
             </Mui.Stack>
@@ -297,7 +297,7 @@ export const Content = () => {
           </Mui.Grid>
         </Mui.Grid>
       </Mui.Stack>
-      <Mui.Stack
+      {/* <Mui.Stack
         style={{
           height: isMobile ? "60vh" : "80vh",
           position: "relative",
@@ -365,7 +365,8 @@ export const Content = () => {
             </Mui.Button>
           </Mui.Box>
         </div>
-      </Mui.Stack>
+      </Mui.Stack> */}
+      <Common.Footer2 />
       <Common.Footer />
     </Mui.Stack>
   );

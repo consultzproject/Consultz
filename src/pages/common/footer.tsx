@@ -5,6 +5,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
+import EmailIcon from "@mui/icons-material/Email";
 import "./common.css";
 export const Footer = () => {
   return (
@@ -34,7 +35,18 @@ export const Footer = () => {
                 {Constant?.Service_Content?.officenumber}
               </Mui.Typography>
             </Mui.Stack>
-
+            <Mui.Stack direction="row" alignItems="center">
+              <EmailIcon
+                sx={{
+                  marginTop: "30px",
+                  paddingRight: "5px",
+                  fontSize: "40px",
+                }}
+              />
+              <Mui.Typography pt={4} fontSize={23} fontFamily="urbanist">
+                {Constant?.Service_Content?.officemailid}
+              </Mui.Typography>
+            </Mui.Stack>
             <Mui.Stack direction="row" alignItems="center">
               <LocationOnRoundedIcon
                 sx={{

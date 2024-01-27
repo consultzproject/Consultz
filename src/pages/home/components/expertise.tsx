@@ -65,7 +65,7 @@ export const Expertise = () => {
           Talent Management Planning
         </Mui.Typography>
 
-        <Mui.Typography
+        {/* <Mui.Typography
           sx={{
             textDecoration: "underline",
             fontSize: "20px",
@@ -75,16 +75,16 @@ export const Expertise = () => {
         >
           About Us
           <ArrowOutwardIcon />
-        </Mui.Typography>
+        </Mui.Typography> */}
       </Mui.Stack>
       <Mui.Divider />
 
       <Mui.Grid container spacing={isMobile ? 1 : 4}>
         <Mui.Grid item xs={12} md={6}>
           <Mui.Stack sx={{ height: "350px" }}>
-            <Mui.Typography fontFamily="Urbanist" fontSize="26px" pb={2}>
+            {/* <Mui.Typography fontFamily="Urbanist" fontSize="26px" pb={2}>
               Efficient Cost Reduction
-            </Mui.Typography>
+            </Mui.Typography> */}
             <Mui.Stack height="300px" id="imagezoom">
               <img
                 src={data?.img}

@@ -24,7 +24,11 @@ export const Banner = () => {
   };
   React.useEffect(() => {
     setData(ContentArr[Numbe]);
+    setTimeout(() => {
+      setNumbe(Numbe < 4 ? Numbe + 1 : 0);
+    }, 3000);
   }, [Numbe]);
+
   const ContentArr = [
     {
       title: "Navigating Your Talent Frontier",
@@ -61,9 +65,10 @@ export const Banner = () => {
           fontWeight: 600,
           zIndex: 999,
           fontFamily: "urbanist",
+          paddingTop: 13,
         }}
         maxWidth={2480}
-        variant="h2"
+        variant="h1"
         id="fade-in"
       >
         {Data?.title}

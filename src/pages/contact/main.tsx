@@ -69,7 +69,7 @@ export const Main = () => {
                       04916030669
                     </Mui.Typography>
 
-                    <Mui.Stack
+                    {/* <Mui.Stack
                       direction="row"
                       alignItems="center"
                       spacing={3}
@@ -78,7 +78,7 @@ export const Main = () => {
                       <FacebookIcon sx={{ color: "grey" }} />
                       <YouTubeIcon sx={{ color: "grey" }} />
                       <TwitterIcon sx={{ color: "grey" }} />
-                    </Mui.Stack>
+                    </Mui.Stack> */}
                   </Mui.Stack>
                 </Mui.Stack>
               </Mui.Grid>
@@ -89,6 +89,11 @@ export const Main = () => {
                 >
                   <Mui.TextField label="Name" variant="standard" fullWidth />
                   <Mui.TextField label="Email" variant="standard" />
+                  <Mui.TextField
+                    label="Mobile No"
+                    variant="standard"
+                    type="number"
+                  />
                   <Mui.TextField
                     label="Message"
                     variant="standard"
