@@ -2,11 +2,11 @@ import * as Mui from "@mui/material";
 import * as MuiIcons from "@mui/icons-material";
 import * as ReactError from "react-error-boundary";
 
-export const ErrorBoundaryProider = (props) => (
+export const ErrorBoundaryProider = (props: any) => (
   <ReactError.ErrorBoundary FallbackComponent={ErrorHandler} {...props} />
 );
 
-const ErrorHandler = ({ error, resetErrorBoundary }) => (
+const ErrorHandler = ({ error, resetErrorBoundary }: any) => (
   <Mui.Stack
     justifyContent="center"
     alignItems="center"
@@ -18,7 +18,7 @@ const ErrorHandler = ({ error, resetErrorBoundary }) => (
       <MuiIcons.ErrorOutline />
     </Mui.IconButton>
 
-    <Mui.Stack component={Mui.CardContent} alignItems="center" spacing={2} >
+    <Mui.Stack component={Mui.CardContent} alignItems="center" spacing={2}>
       <Mui.Typography variant="h4" color="#000" mt={6}>
         {error.name}
       </Mui.Typography>

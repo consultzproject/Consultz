@@ -1,14 +1,14 @@
 import * as Mui from "@mui/material";
 import * as ReactDOM from "react-dom";
 
-export const customHandlingProvider = ({ children }) => (
+export const customHandlingProvider = ({ children }: any) => (
   <Mui.Box>
     <Mui.Box id="cutom-handle-boundary" />
     {children}
   </Mui.Box>
 );
 
-const SnackBar = ({ message, variant }) => {
+const SnackBar = ({ message, variant }: any) => {
   const handleClose = () =>
     ReactDOM.render(<></>, document.getElementById("cutom-handle-boundary"));
   return (
@@ -25,7 +25,7 @@ const SnackBar = ({ message, variant }) => {
   );
 };
 
-export const useCustomHandler = (props) =>
+export const useCustomHandler = (props: any) =>
   ReactDOM.render(
     <SnackBar {...props} />,
     document.getElementById("cutom-handle-boundary")

@@ -9,22 +9,22 @@ export const Consulting = () => {
     {
       title: "IT Talent Management",
       subHeader: "Enhanced Strategic Planning",
-      performance: "65%",
+      performance: "89%",
     },
     {
       title: "Tech  Consulting",
       subHeader: "Cost Reduction",
-      performance: "45%",
+      performance: "65%",
     },
     {
       title: "Project Outsourcing",
       subHeader: "Enhanced Risk Management",
-      performance: "89%",
+      performance: "95%",
     },
     {
       title: "International Business Consulting ",
       subHeader: "Enhanced Strategic Planning",
-      performance: "96%",
+      performance: "",
     },
   ];
   return (
@@ -58,17 +58,22 @@ export const Consulting = () => {
           </Mui.Typography>
         </Mui.Grid>
         {Arr?.map((item, index) => (
-          <Mui.Grid item md={4} xs={12} spacing={4} key={index}>
-            <Mui.Stack spacing={4}>
-              <Mui.Stack direction="row">
-                <AddIcon />
-                <Mui.Typography>{item.title}</Mui.Typography>
+          <Mui.Grid item xs={12} spacing={4} key={index}>
+            <Mui.Stack
+              spacing={4}
+              direction="row"
+              justifyContent="space-between"
+            >
+              <Mui.Stack>
+                <Mui.Stack direction="row">
+                  <AddIcon />
+                  <Mui.Typography>{item.title}</Mui.Typography>
+                </Mui.Stack>
+                <Mui.Typography paddingLeft="25px">
+                  {item.subHeader}
+                </Mui.Typography>
               </Mui.Stack>
-              <Mui.Stack spacing={1}>
-                <Mui.Typography variant="h1">{item.performance}</Mui.Typography>
-                <Mui.Divider />
-                <Mui.Typography>{item.subHeader}</Mui.Typography>
-              </Mui.Stack>
+              <Mui.Typography variant="h3">{item.performance}</Mui.Typography>
             </Mui.Stack>
           </Mui.Grid>
         ))}

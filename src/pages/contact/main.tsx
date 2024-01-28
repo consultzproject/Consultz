@@ -1,11 +1,59 @@
 import * as Mui from "@mui/material";
 import Image1 from "src/assets/contactus/Contact us.svg";
 import * as Common from "src/pages/common";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+import Axios from "axios";
+import { useFormik } from "formik";
+import * as Formik from "formik";
+import * as Providers from "src/providers";
+import * as validation from "src/validation";
 
 export const Main = () => {
+  const handler = Providers.useCustomHandler;
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      mobileno: "",
+      message: "",
+    },
+    validationSchema: validation.Contact,
+    onSubmit: (values) => {
+      handleSubmits(values);
+    },
+  });
+
+  const handleSubmits = (values: any) => {
+    const options = {
+      url: "http://localhost:8080/v1/user/contact",
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+      data: {
+        name: values.name,
+        email: values.email,
+        mobile: values.mobileno,
+        message: values.message,
+      },
+    };
+    Axios(options).then((res: any) => {
+      console.log(res, "res");
+      if (res?.data?.error) {
+        alert("Error");
+      } else {
+        alert("Success");
+        formik.resetForm();
+      }
+
+      // handler({
+      //   message: res?.data?.status || "Login successful",
+      //   variant: res?.data?.error ? "success" : "error",
+      //   min: true,
+      // });
+    });
+  };
   return (
     <Mui.Stack>
       <Mui.Stack sx={{ height: "100px", background: "#4a4a4a" }} />
@@ -68,51 +116,90 @@ export const Main = () => {
                     >
                       04916030669
                     </Mui.Typography>
-
-                    {/* <Mui.Stack
-                      direction="row"
-                      alignItems="center"
-                      spacing={3}
-                      pt={5}
-                    >
-                      <FacebookIcon sx={{ color: "grey" }} />
-                      <YouTubeIcon sx={{ color: "grey" }} />
-                      <TwitterIcon sx={{ color: "grey" }} />
-                    </Mui.Stack> */}
                   </Mui.Stack>
                 </Mui.Stack>
               </Mui.Grid>
               <Mui.Grid item xs={12} md={6}>
-                <Mui.Stack
-                  sx={{ paddingLeft: { xs: 0, md: "100px" } }}
-                  spacing={2}
-                >
-                  <Mui.TextField label="Name" variant="standard" fullWidth />
-                  <Mui.TextField label="Email" variant="standard" />
-                  <Mui.TextField
-                    label="Mobile No"
-                    variant="standard"
-                    type="number"
-                  />
-                  <Mui.TextField
-                    label="Message"
-                    variant="standard"
-                    multiline
-                    // maxRows={4}
-                    rows={6}
-                  />
-                  <Mui.Button
-                    variant="contained"
-                    sx={{
-                      borderRadius: "20px",
-                      background: "#203556",
-                      width: "fit-content",
-                      textTransform: "capitalize",
-                    }}
+                <form onSubmit={formik.handleSubmit}>
+                  <Mui.Stack
+                    sx={{ paddingLeft: { xs: 0, md: "100px" } }}
+                    spacing={2}
                   >
-                    Submit
-                  </Mui.Button>
-                </Mui.Stack>
+                    <Mui.TextField
+                      fullWidth
+                      id="name"
+                      name="name"
+                      label="Name"
+                      variant="standard"
+                      value={formik.values.name}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      error={formik.touched.name && Boolean(formik.errors.name)}
+                      helperText={formik.touched.name && formik.errors.name}
+                    />
+                    <Mui.TextField
+                      fullWidth
+                      variant="standard"
+                      id="email"
+                      name="email"
+                      label="Email"
+                      value={formik.values.email}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      error={
+                        formik.touched.email && Boolean(formik.errors.email)
+                      }
+                      helperText={formik.touched.email && formik.errors.email}
+                    />
+                    <Mui.TextField
+                      fullWidth
+                      id="mobileno"
+                      variant="standard"
+                      name="mobileno"
+                      label="Mobile No"
+                      value={formik.values.mobileno}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      error={
+                        formik.touched.mobileno &&
+                        Boolean(formik.errors.mobileno)
+                      }
+                      helperText={
+                        formik.touched.mobileno && formik.errors.mobileno
+                      }
+                    />
+                    <Mui.TextField
+                      variant="standard"
+                      fullWidth
+                      id="message"
+                      name="message"
+                      label="Message"
+                      rows={6}
+                      multiline
+                      value={formik.values.message}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      error={
+                        formik.touched.message && Boolean(formik.errors.message)
+                      }
+                      helperText={
+                        formik.touched.message && formik.errors.message
+                      }
+                    />
+                    <Mui.Button
+                      variant="contained"
+                      type="submit"
+                      sx={{
+                        borderRadius: "20px",
+                        background: "#203556",
+                        width: "fit-content",
+                        textTransform: "capitalize",
+                      }}
+                    >
+                      Submit
+                    </Mui.Button>
+                  </Mui.Stack>
+                </form>
               </Mui.Grid>
             </Mui.Grid>
           </Mui.Stack>
