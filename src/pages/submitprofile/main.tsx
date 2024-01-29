@@ -3,6 +3,10 @@ import * as Common from "src/pages/common";
 import Img1 from "src/assets/submitprofile/submit your profile.svg";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
+import Axios from "axios";
+import { useFormik } from "formik";
+import * as Formik from "formik";
+
 
 export const Main = () => {
   const VisuallyHiddenInput = styled("input")({
@@ -16,6 +20,56 @@ export const Main = () => {
     whiteSpace: "nowrap",
     width: 1,
   });
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      mobile: "",
+      designation: "",
+      resume_url:""
+    },
+    // validationSchema: validation.Contact,
+    onSubmit: (values) => {
+      console.log(values,"check this")
+      handleSubmits(values);
+    },
+  });
+
+  const handleSubmits = (values: any) => {
+    console.log(values,"checking")
+
+    const options = {
+      url: "https://seyalbackend.onrender.com/v1/user/resume",
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+      data: {
+        name: values.name,
+        email: values.email,
+        mobile: values.mobile,
+        designation:values.designation,
+        resume_url:"https://seyalbackend.onrender.com/files/Logo.pdf"
+      },
+    };
+    Axios(options).then((res: any) => {
+      console.log(res, "res");
+      if (res?.data?.error) {
+        alert("Error");
+      } else {
+        alert("Profile Submitted Successfully");
+        formik.resetForm();
+      }
+
+      // handler({
+      //   message: res?.data?.status || "Login successful",
+      //   variant: res?.data?.error ? "success" : "error",
+      //   min: true,
+      // });
+    });
+  };
 
   return (
     <Mui.Grid container>
@@ -39,6 +93,8 @@ export const Main = () => {
         md={6}
         // sx={{ padding: { xs: "30px 20px", md: "30px 120px" } }}
       >
+                  <form onSubmit={formik.handleSubmit}>
+
         <Mui.Stack
           spacing={2}
           width="100%"
@@ -56,30 +112,52 @@ export const Main = () => {
             Submit Your Profile
           </Mui.Typography>
           <Mui.Stack spacing={2} maxWidth="450px" width="100%">
+
+          <Mui.Stack spacing={2} maxWidth="450px" width="100%">
             <Mui.TextField
               // error
-              id="outlined-error-helper-text"
+            
+              id="name"
+              name="name"
               label="Name"
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+
+              
               // defaultValue="9898976541"
               // helperText="Enter Mobile Number..."
             />
             <Mui.TextField
               // error
-              id="outlined-error-helper-text"
-              label="Email"
+              id="email"
+                      name="email"
+                      label="Email"
+                      value={formik.values.email}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
               // helperText="Enter Mobile Number..."
             />
             <Mui.TextField
               // error
-              id="outlined-error-helper-text"
-              label="Mobile Number"
+              id="mobile"
+                      name="mobile"
+                      label="Mobile"
+                      value={formik.values.mobile}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
               type="number"
               // helperText="Enter Mobile Number..."
             />
             <Mui.TextField
               // error
-              id="outlined-error-helper-text"
+              id="designation"
+              name="designation"
               label="Designation"
+              value={formik.values.designation}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}             
+              
               // helperText="Enter Mobile Number..."
             />
           </Mui.Stack>
@@ -108,9 +186,16 @@ export const Main = () => {
             }}
             // onClick={() => Navigate("/register")}
           >
-            <Mui.Typography>Submit</Mui.Typography>
+               <Mui.Button
+                      type="submit"
+                 
+                    >
+                      Submit
+                    </Mui.Button>
           </Mui.Stack>
         </Mui.Stack>
+        </Mui.Stack>
+</form>
       </Mui.Grid>
       <Common.Footer />
     </Mui.Grid>

@@ -1,13 +1,14 @@
 import React from "react";
 import * as Common from "src/pages/common";
 import * as Mui from "@mui/material";
+import Banner from "src/assets/testimonials/banner.svg";
 import Image from "src/assets/testimonials/AdobeStock-9OI4A1wQN2 (1).svg";
 export const Main = () => {
   return (
     <Mui.Stack>
       <Mui.Stack height="90vh">
         <img
-          src={Image}
+          src={Banner}
           style={{
             width: "100%",
             height: "100%",

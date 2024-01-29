@@ -44,7 +44,7 @@ export const Consulting = () => {
             Our Curated Services
           </Mui.Typography>
         </Mui.Grid>
-        <Mui.Grid item md={4} xs={12}>
+        {/* <Mui.Grid item md={4} xs={12}>
           <Mui.Typography
             sx={{
               textDecoration: "underline",
@@ -56,7 +56,7 @@ export const Consulting = () => {
             All Services
             <ArrowOutwardIcon />
           </Mui.Typography>
-        </Mui.Grid>
+        </Mui.Grid> */}
         {Arr?.map((item, index) => (
           <Mui.Grid item xs={12} spacing={4} key={index}>
             <Mui.Stack

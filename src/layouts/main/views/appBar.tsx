@@ -161,7 +161,6 @@ export const AppBar = () => {
               textDecoration: "none",
             }}
           >
-            LOGOmobile
           </Mui.Typography>
           <Mui.Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -194,7 +193,7 @@ export const AppBar = () => {
             >
               {Pages.map((page, index) => (
                 <Mui.MenuItem key={index} onClick={handleCloseNavMenu}>
-                  <Mui.Typography textAlign="center">
+                  <Mui.Typography textAlign="center" onClick={() => Navigate(page.path)}>
                     {page.name}
                   </Mui.Typography>
                 </Mui.MenuItem>

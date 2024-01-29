@@ -25,7 +25,7 @@ export const Main = () => {
 
   const handleSubmits = (values: any) => {
     const options = {
-      url: "http://localhost:8080/v1/user/contact",
+      url: "https://seyalbackend.onrender.com/v1/user/contact",
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -43,7 +43,7 @@ export const Main = () => {
       if (res?.data?.error) {
         alert("Error");
       } else {
-        alert("Success");
+        alert("Contact Details sent Successfully");
         formik.resetForm();
       }
 

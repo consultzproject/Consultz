@@ -157,11 +157,11 @@ export const Content = () => {
           <Mui.Grid item lg={6} md={12} xs={12}>
             <Mui.Stack spacing={1}>
               <Mui.Stack direction="column">
-                <Mui.Typography variant="h5" color="black">
+                <Mui.Typography variant="h4" color="black">
                   {Service_Content?.subtitle1}
                 </Mui.Typography>
                 <Mui.Divider sx={{ width: "100%", mb: 1, mt: 1 }} />
-                <Mui.Typography variant="subtitle1" color="#536c82">
+                <Mui.Typography variant="h5" color="#536c82" fontFamily="urbanist">
                   {Service_Content?.subtitledescription1}
                 </Mui.Typography>
               </Mui.Stack>
@@ -171,11 +171,11 @@ export const Content = () => {
           <Mui.Grid item lg={6} md={12} xs={12} ref={scrollRef2}>
             <Mui.Stack spacing={1}>
               <Mui.Stack direction="column">
-                <Mui.Typography variant="h5" color="black">
+                <Mui.Typography variant="h4" color="black">
                   {Service_Content?.subtitle2}
                 </Mui.Typography>
                 <Mui.Divider sx={{ width: "100%", mb: 2, mt: 2 }} />
-                <Mui.Typography variant="subtitle1" color="#536c82">
+                <Mui.Typography variant="h5" color="#536c82" fontFamily="urbanist">
                   {Service_Content?.subtitledescription2}
                 </Mui.Typography>
               </Mui.Stack>
@@ -196,7 +196,7 @@ export const Content = () => {
           {/* part2 header */}
 
           <Mui.Grid item md={12} xs={12} pb={5}>
-            <Mui.Typography
+            {/* <Mui.Typography
               fontFamily="Urbanist"
               fontSize="32px"
               fontWeight={500}
@@ -204,7 +204,7 @@ export const Content = () => {
               color="#536c82"
             >
               Expert services for development and interior design.
-            </Mui.Typography>
+            </Mui.Typography> */}
             <Mui.Divider sx={{ width: "100%", mt: 1, mb: 1 }} />
           </Mui.Grid>
           {/* part3 */}
@@ -222,11 +222,11 @@ export const Content = () => {
           </Mui.Grid>
           <Mui.Grid item lg={6} md={12} xs={12}>
             <Mui.Stack direction="column" ref={scrollRef4}>
-              <Mui.Typography variant="h5" color="black">
+              <Mui.Typography variant="h4" color="black">
                 {Service_Content?.subtitle4}
               </Mui.Typography>
               <Mui.Divider sx={{ width: "100%", mb: 1, mt: 1 }} />
-              <Mui.Typography variant="subtitle1" color="#536c82">
+              <Mui.Typography variant="h5" color="#536c82" fontFamily="urbanist">
                 {Service_Content?.subtitledescription4}
               </Mui.Typography>
             </Mui.Stack>
@@ -235,11 +235,11 @@ export const Content = () => {
           {/* part4 */}
           <Mui.Grid item lg={6} md={12} xs={12} ref={scrollRef3}>
             <Mui.Stack direction="column">
-              <Mui.Typography variant="h5" color="black">
+              <Mui.Typography variant="h4" color="black">
                 {Service_Content?.subtitle3}
               </Mui.Typography>
               <Mui.Divider sx={{ width: "100%", mb: 1, mt: 1 }} />
-              <Mui.Typography variant="subtitle1" color="#536c82">
+              <Mui.Typography variant="h5" color="#536c82" fontFamily="urbanist">
                 {Service_Content?.subtitledescription3}
               </Mui.Typography>
             </Mui.Stack>
