@@ -5,7 +5,14 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 export const Consulting = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
-  const Arr = [
+
+  const Titles = [
+    "IT Talent Management",
+    "Tech  Consulting",
+    "Project Outsourcing",
+    "International Business Consulting ",
+  ];
+  const subTitle = [
     {
       title: "IT Talent Management",
       subHeader: "Enhanced Strategic Planning",
@@ -20,11 +27,6 @@ export const Consulting = () => {
       title: "Project Outsourcing",
       subHeader: "Enhanced Risk Management",
       performance: "95%",
-    },
-    {
-      title: "International Business Consulting ",
-      subHeader: "Enhanced Strategic Planning",
-      performance: "",
     },
   ];
   return (
@@ -44,36 +46,22 @@ export const Consulting = () => {
             Our Curated Services
           </Mui.Typography>
         </Mui.Grid>
-        {/* <Mui.Grid item md={4} xs={12}>
-          <Mui.Typography
-            sx={{
-              textDecoration: "underline",
-              fontSize: "20px",
-              textAlign: { md: "end", xs: "center" },
-              cursor: "pointer",
-            }}
-          >
-            All Services
-            <ArrowOutwardIcon />
-          </Mui.Typography>
-        </Mui.Grid> */}
-        {Arr?.map((item, index) => (
-          <Mui.Grid item xs={12} spacing={4} key={index}>
-            <Mui.Stack
-              spacing={4}
-              direction="row"
-              justifyContent="space-between"
-            >
-              <Mui.Stack>
-                <Mui.Stack direction="row">
-                  <AddIcon />
-                  <Mui.Typography>{item.title}</Mui.Typography>
-                </Mui.Stack>
-                <Mui.Typography paddingLeft="25px">
-                  {item.subHeader}
-                </Mui.Typography>
-              </Mui.Stack>
-              <Mui.Typography variant="h3">{item.performance}</Mui.Typography>
+        <Mui.Grid item xs={12}>
+          {Titles?.map((item, index) => (
+            <Mui.Stack direction="row" key={index}>
+              <AddIcon />
+              <Mui.Typography>{item}</Mui.Typography>
+            </Mui.Stack>
+          ))}
+        </Mui.Grid>
+        {subTitle?.map((item, index) => (
+          <Mui.Grid item xs={12} md={4}>
+            <Mui.Stack key={index}>
+              <Mui.Typography variant="h1">{item.performance}</Mui.Typography>
+              <Mui.Divider />
+              <Mui.Typography variant="h5" pt={2}>
+                {item.subHeader}
+              </Mui.Typography>
             </Mui.Stack>
           </Mui.Grid>
         ))}

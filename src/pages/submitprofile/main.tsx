@@ -7,7 +7,6 @@ import Axios from "axios";
 import { useFormik } from "formik";
 import * as Formik from "formik";
 
-
 export const Main = () => {
   const VisuallyHiddenInput = styled("input")({
     clip: "rect(0 0 0 0)",
@@ -27,17 +26,17 @@ export const Main = () => {
       email: "",
       mobile: "",
       designation: "",
-      resume_url:""
+      resume_url: "",
     },
     // validationSchema: validation.Contact,
     onSubmit: (values) => {
-      console.log(values,"check this")
+      console.log(values, "check this");
       handleSubmits(values);
     },
   });
 
   const handleSubmits = (values: any) => {
-    console.log(values,"checking")
+    console.log(values, "checking");
 
     const options = {
       url: "https://seyalbackend.onrender.com/v1/user/resume",
@@ -50,8 +49,8 @@ export const Main = () => {
         name: values.name,
         email: values.email,
         mobile: values.mobile,
-        designation:values.designation,
-        resume_url:"https://seyalbackend.onrender.com/files/Logo.pdf"
+        designation: values.designation,
+        resume_url: "https://seyalbackend.onrender.com/files/Logo.pdf",
       },
     };
     Axios(options).then((res: any) => {
@@ -93,109 +92,118 @@ export const Main = () => {
         md={6}
         // sx={{ padding: { xs: "30px 20px", md: "30px 120px" } }}
       >
-                  <form onSubmit={formik.handleSubmit}>
-
-        <Mui.Stack
-          spacing={2}
-          width="100%"
-          alignItems="center"
-          sx={{ padding: { xs: "30px 20px", md: "50px 120px 60px 120px" } }}
-        >
-          <Mui.Typography
-            // variant={{ md: "h5", xs: "h6" }}
-            textAlign="center"
-            fontWeight={600}
-            fontFamily="urbanist"
-            color="#203556"
-            sx={{ fontSize: { xs: "30px", md: "50px" } }}
-          >
-            Submit Your Profile
-          </Mui.Typography>
-          <Mui.Stack spacing={2} maxWidth="450px" width="100%">
-
-          <Mui.Stack spacing={2} maxWidth="450px" width="100%">
-            <Mui.TextField
-              // error
-            
-              id="name"
-              name="name"
-              label="Name"
-              value={formik.values.name}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-
-              
-              // defaultValue="9898976541"
-              // helperText="Enter Mobile Number..."
-            />
-            <Mui.TextField
-              // error
-              id="email"
-                      name="email"
-                      label="Email"
-                      value={formik.values.email}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-              // helperText="Enter Mobile Number..."
-            />
-            <Mui.TextField
-              // error
-              id="mobile"
-                      name="mobile"
-                      label="Mobile"
-                      value={formik.values.mobile}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-              type="number"
-              // helperText="Enter Mobile Number..."
-            />
-            <Mui.TextField
-              // error
-              id="designation"
-              name="designation"
-              label="Designation"
-              value={formik.values.designation}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}             
-              
-              // helperText="Enter Mobile Number..."
-            />
-          </Mui.Stack>
-          <Mui.Button
-            component="label"
-            variant="contained"
-            startIcon={<CloudUploadIcon />}
-          >
-            Upload Your Resume
-            <VisuallyHiddenInput type="file" />
-          </Mui.Button>
-
+        <form onSubmit={formik.handleSubmit}>
           <Mui.Stack
-            sx={{
-              width: "100px",
-              height: "40px",
-              borderRadius: "10px",
-              alignItems: "center",
-              justifyContent: "center",
-              alignSelf: "center",
-              background: "#cfc0ff",
-              cursor: "pointer",
-              "&:hover": {
-                background: "#665699",
-              },
-            }}
-            // onClick={() => Navigate("/register")}
+            spacing={2}
+            width="100%"
+            alignItems="center"
+            sx={{ padding: { xs: "30px 20px", md: "50px 120px 60px 120px" } }}
           >
-               <Mui.Button
-                      type="submit"
-                 
-                    >
-                      Submit
-                    </Mui.Button>
+            <Mui.Typography
+              // variant={{ md: "h5", xs: "h6" }}
+              textAlign="center"
+              fontWeight={600}
+              fontFamily="urbanist"
+              color="#203556"
+              sx={{ fontSize: { xs: "30px", md: "50px" } }}
+            >
+              Submit Your Profile
+            </Mui.Typography>
+            <Mui.Stack spacing={2} maxWidth="450px" width="100%">
+              <Mui.Stack spacing={2} maxWidth="450px" width="100%">
+                <Mui.TextField
+                  // error
+
+                  id="name"
+                  name="name"
+                  label="Name"
+                  value={formik.values.name}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+
+                  // defaultValue="9898976541"
+                  // helperText="Enter Mobile Number..."
+                />
+                <Mui.TextField
+                  // error
+                  id="email"
+                  name="email"
+                  label="Email"
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  // helperText="Enter Mobile Number..."
+                />
+                <Mui.TextField
+                  // error
+                  id="mobile"
+                  name="mobile"
+                  label="Mobile"
+                  value={formik.values.mobile}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  type="number"
+                  // helperText="Enter Mobile Number..."
+                />
+                <Mui.FormControl sx={{ m: 1, minWidth: 120 }}>
+                  <Mui.InputLabel id="demo-simple-select-helper-label">
+                    Tech
+                  </Mui.InputLabel>
+                  <Mui.Select
+                    id="tech"
+                    name="tech"
+                    label="Tech"
+                    value={formik.values.designation}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  >
+                    <Mui.MenuItem value={10}>Ten</Mui.MenuItem>
+                    <Mui.MenuItem value={20}>Twenty</Mui.MenuItem>
+                    <Mui.MenuItem value={30}>Thirty</Mui.MenuItem>
+                  </Mui.Select>
+                </Mui.FormControl>
+                <Mui.TextField
+                  // error
+                  id="designation"
+                  name="designation"
+                  label="Designation"
+                  value={formik.values.designation}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+
+                  // helperText="Enter Mobile Number..."
+                />
+              </Mui.Stack>
+              <Mui.Button
+                component="label"
+                variant="contained"
+                startIcon={<CloudUploadIcon />}
+              >
+                Upload Your Resume
+                <VisuallyHiddenInput type="file" />
+              </Mui.Button>
+
+              <Mui.Stack
+                sx={{
+                  width: "100px",
+                  height: "40px",
+                  borderRadius: "10px",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  alignSelf: "center",
+                  background: "#cfc0ff",
+                  cursor: "pointer",
+                  "&:hover": {
+                    background: "#665699",
+                  },
+                }}
+                // onClick={() => Navigate("/register")}
+              >
+                <Mui.Button type="submit">Submit</Mui.Button>
+              </Mui.Stack>
+            </Mui.Stack>
           </Mui.Stack>
-        </Mui.Stack>
-        </Mui.Stack>
-</form>
+        </form>
       </Mui.Grid>
       <Common.Footer />
     </Mui.Grid>
