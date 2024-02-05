@@ -14,16 +14,16 @@ export const Footer2 = () => {
   return (
     <Mui.Stack
       style={{
-        height: isMobile ? "60vh" : "80vh",
+        height: isMobile ? "" : "80vh",
         position: "relative",
         overflow: "hidden", // Ensures that the image doesn't overflow the container
       }}
     >
-      <img src={Service3} style={{ filter: "blur(1px)" }} />
+      <img src={Service3} style={{ filter: "brightness(50%)" }} />
       <div
         style={{
           position: "absolute",
-          top: "30%",
+          top: " 30%",
           left: "40%",
           transform: "translate(-40%, -40%)",
           textAlign: "center",
@@ -31,10 +31,11 @@ export const Footer2 = () => {
           flexDirection: "column",
           zIndex: 1, // Ensure this content is above the background image
           display: PathUrl?.includes("blog") ? "none" : "block",
+          width: isMobile ? "80%" : "",
         }}
       >
         <Mui.Typography
-          variant={isMobile ? "h4" : "h2"}
+          variant={isMobile ? "h6" : "h2"}
           mt={isMobile ? 4 : 0}
           fontWeight="bolder"
         >
@@ -56,8 +57,9 @@ export const Footer2 = () => {
             sx={{
               textTransform: "capitalize",
               fontWeight: "bolder",
-              bgcolor: "transparent",
-              padding: "15px 40px",
+              color: isMobile ? "black" : "white",
+              bgcolor: isMobile ? "white" : "transparent",
+              padding: isMobile ? "8px 15px" : "15px 40px",
               border: "2px solid #fff",
               borderRadius: "20px",
               ":hover": {

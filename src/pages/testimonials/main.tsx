@@ -3,10 +3,14 @@ import * as Common from "src/pages/common";
 import * as Mui from "@mui/material";
 import Banner from "src/assets/testimonials/banner.svg";
 import Image from "src/assets/testimonials/AdobeStock-9OI4A1wQN2 (1).svg";
+import { useMediaQuery } from "@mui/material";
+
 export const Main = () => {
+  const isMobile = useMediaQuery("(max-width:600px)");
+
   return (
     <Mui.Stack>
-      <Mui.Stack height="90vh">
+      <Mui.Stack height={isMobile ? "40vh" : "90vh"}>
         <img
           src={Banner}
           style={{
@@ -20,7 +24,7 @@ export const Main = () => {
       <Mui.Grid container>
         <Mui.Grid item xs={12} md={6}>
           <Mui.Stack
-            height="90vh"
+            height={isMobile ? "100%" : "90vh"}
             sx={{ padding: { xs: "30px 20px", md: "40px 60px 60px 60px" } }}
             id="imagezoom"
           >

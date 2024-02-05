@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import * as Formik from "formik";
 import * as Providers from "src/providers";
 import * as validation from "src/validation";
+import { useMediaQuery } from "@mui/material";
 
 export const Main = () => {
   const handler = Providers.useCustomHandler;
@@ -54,11 +55,12 @@ export const Main = () => {
       // });
     });
   };
+  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Mui.Stack>
       <Mui.Stack sx={{ height: "100px", background: "#4a4a4a" }} />
       <Mui.Stack position="relative">
-        <Mui.Stack height={400}>
+        <Mui.Stack height={isMobile ? "100%" : 400}>
           <img
             src={Image1}
             style={{

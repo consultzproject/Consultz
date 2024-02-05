@@ -59,11 +59,10 @@ export const Content = () => {
       </Mui.Stack>
       <Mui.Stack
         sx={{
-          padding: { xs: 6, md: "40px 150px", sm: "20px 100px" },
+          padding: { xs: 3, md: "40px 150px", sm: "20px 100px" },
         }}
-        spacing={3}
       >
-        <Mui.Grid container spacing={isMobile ? 1 : 4}>
+        <Mui.Grid container spacing={isMobile ? 10 : 4}>
           <Mui.Grid item lg={6} md={8} xs={12}>
             <Mui.Typography
               fontWeight={700}
@@ -265,7 +264,7 @@ export const Content = () => {
               <Mui.Typography
                 fontWeight={700}
                 color="#203556"
-                variant={isMobile ? "h2" : "h1"}
+                variant={isMobile ? "h3" : "h1"}
               >
                 {Service_Content.header2}
               </Mui.Typography>

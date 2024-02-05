@@ -133,13 +133,35 @@ export const AppBar = () => {
             </Mui.Box>
             <Mui.Stack direction="row" alignItems="center" spacing={2}>
               <InstagramIcon
-                sx={{ color: window.scrollY > 6 ? "black" : "white" }}
+                sx={{
+                  color: window.scrollY > 6 ? "black" : "white",
+                  cursor: "pointer",
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/seyal.eu?igshid=ZGUzMzM3NWJiOQ%3D%3D"
+                  )
+                }
               />
               <FacebookIcon
-                sx={{ color: window.scrollY > 6 ? "black" : "white" }}
+                sx={{
+                  color: window.scrollY > 6 ? "black" : "white",
+                  cursor: "pointer",
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://www.facebook.com/Seyal.eu?mibextid=ZbWKwL"
+                  )
+                }
               />
               <LinkedInIcon
-                sx={{ color: window.scrollY > 6 ? "black" : "white" }}
+                sx={{
+                  color: window.scrollY > 6 ? "black" : "white",
+                  cursor: "pointer",
+                }}
+                onClick={() =>
+                  window.open("https://www.linkedin.com/company/seyal.eu/")
+                }
               />
             </Mui.Stack>
           </Mui.Stack>
@@ -160,8 +182,7 @@ export const AppBar = () => {
               color: "inherit",
               textDecoration: "none",
             }}
-          >
-          </Mui.Typography>
+          ></Mui.Typography>
           <Mui.Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -193,7 +214,10 @@ export const AppBar = () => {
             >
               {Pages.map((page, index) => (
                 <Mui.MenuItem key={index} onClick={handleCloseNavMenu}>
-                  <Mui.Typography textAlign="center" onClick={() => Navigate(page.path)}>
+                  <Mui.Typography
+                    textAlign="center"
+                    onClick={() => Navigate(page.path)}
+                  >
                     {page.name}
                   </Mui.Typography>
                 </Mui.MenuItem>

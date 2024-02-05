@@ -6,6 +6,7 @@ import { styled } from "@mui/material/styles";
 import Axios from "axios";
 import { useFormik } from "formik";
 import * as Formik from "formik";
+import { useMediaQuery } from "@mui/material";
 
 export const Main = () => {
   const VisuallyHiddenInput = styled("input")({
@@ -26,6 +27,7 @@ export const Main = () => {
       email: "",
       mobile: "",
       designation: "",
+      tech: "",
       resume_url: "",
     },
     // validationSchema: validation.Contact,
@@ -50,6 +52,7 @@ export const Main = () => {
         email: values.email,
         mobile: values.mobile,
         designation: values.designation,
+        tech: values.tech,
         resume_url: "https://seyalbackend.onrender.com/files/Logo.pdf",
       },
     };
@@ -69,6 +72,7 @@ export const Main = () => {
       // });
     });
   };
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   return (
     <Mui.Grid container>
@@ -77,7 +81,7 @@ export const Main = () => {
       </Mui.Grid>
       <Mui.Grid item xs={12} md={6}>
         <Mui.Stack
-          height="90vh"
+          height={isMobile ? "100%" : "90vh"}
           sx={{ padding: { xs: "30px 20px", md: "40px 60px 60px 60px" } }}
         >
           <img
@@ -153,13 +157,19 @@ export const Main = () => {
                     id="tech"
                     name="tech"
                     label="Tech"
-                    value={formik.values.designation}
+                    value={formik.values.tech}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                   >
-                    <Mui.MenuItem value={10}>Ten</Mui.MenuItem>
-                    <Mui.MenuItem value={20}>Twenty</Mui.MenuItem>
-                    <Mui.MenuItem value={30}>Thirty</Mui.MenuItem>
+                    Java, dot net, testing, sap, business analyst, share point,
+                    others
+                    <Mui.MenuItem value={10}>Java</Mui.MenuItem>
+                    <Mui.MenuItem value={20}>Dot Net</Mui.MenuItem>
+                    <Mui.MenuItem value={30}> Testing</Mui.MenuItem>
+                    <Mui.MenuItem value={30}> Sap</Mui.MenuItem>
+                    <Mui.MenuItem value={30}> Business Analyst</Mui.MenuItem>
+                    <Mui.MenuItem value={30}> Share Point</Mui.MenuItem>
+                    <Mui.MenuItem value={30}> Others</Mui.MenuItem>
                   </Mui.Select>
                 </Mui.FormControl>
                 <Mui.TextField
@@ -199,7 +209,9 @@ export const Main = () => {
                 }}
                 // onClick={() => Navigate("/register")}
               >
-                <Mui.Button type="submit">Submit</Mui.Button>
+                <Mui.Button type="submit" sx={{ color: "black" }}>
+                  Submit
+                </Mui.Button>
               </Mui.Stack>
             </Mui.Stack>
           </Mui.Stack>

@@ -7,7 +7,11 @@ import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import EmailIcon from "@mui/icons-material/Email";
 import "./common.css";
+import { useMediaQuery } from "@mui/material";
+
 export const Footer = () => {
+  const isMobile = useMediaQuery("(max-width:600px)");
+
   return (
     <Mui.Stack
       minHeight={400}
@@ -67,14 +71,32 @@ export const Footer = () => {
             sx={{
               width: "100%",
               alignItems: "center",
-              justifyContent: "space-between",
+              justifyContent: isMobile ? "space-evenly" : "space-between",
               height: "100%",
               minHeight: "180px",
             }}
+            direction={isMobile ? "row" : "column"}
           >
-            <InstagramIcon className="footerIcon" />
-            <FacebookIcon className="footerIcon" />
-            <LinkedInIcon className="footerIcon" />
+            <InstagramIcon
+              className="footerIcon"
+              onClick={() =>
+                window.open(
+                  "https://www.instagram.com/seyal.eu?igshid=ZGUzMzM3NWJiOQ%3D%3D"
+                )
+              }
+            />
+            <FacebookIcon
+              className="footerIcon"
+              onClick={() =>
+                window.open("https://www.facebook.com/Seyal.eu?mibextid=ZbWKwL")
+              }
+            />
+            <LinkedInIcon
+              className="footerIcon"
+              onClick={() =>
+                window.open("https://www.linkedin.com/company/seyal.eu/")
+              }
+            />
           </Mui.Stack>
         </Mui.Grid>
       </Mui.Grid>
