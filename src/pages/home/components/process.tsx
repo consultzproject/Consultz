@@ -112,7 +112,10 @@ export const Process = () => {
 
   return (
     <Stack
-      sx={{ width: "100%", padding: "80px 120px 150px 120px" }}
+      sx={{
+        width: "100%",
+        padding: isMobile ? "80px 40px 150px 40px" : "80px 120px 150px 120px",
+      }}
       spacing={4}
     >
       <Stepper

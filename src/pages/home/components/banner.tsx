@@ -54,13 +54,17 @@ export const Banner = () => {
 
   return (
     <Mui.Stack
-      style={{ height: isMobile ? "auto" : "100vh", position: "relative" }}
+      style={{
+        height: isMobile ? "40vh" : "100vh",
+        position: "relative",
+        overflow: isMobile ? "hidden" : "",
+      }}
     >
       <Mui.Typography
         sx={{
           color: "white",
           position: "absolute",
-          top: "30%",
+          top: isMobile ? "10%" : "30%",
           left: "12%",
           fontWeight: 600,
           zIndex: 999,
@@ -68,7 +72,7 @@ export const Banner = () => {
           paddingTop: 13,
         }}
         maxWidth={2480}
-        variant="h1"
+        variant={isMobile ? "h5" : "h1"}
         id="fade-in"
       >
         {Data?.title}
@@ -89,11 +93,11 @@ export const Banner = () => {
         style={{
           position: "absolute",
           top: "80%",
-          right: "10%",
+          right: isMobile ? "20%" : "10%",
           color: "white",
           zIndex: 999,
           cursor: "pointer",
-          fontSize: 55,
+          fontSize: isMobile ? 52 : 55,
         }}
         onClick={() => CountDecrement()}
       />

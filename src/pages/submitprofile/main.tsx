@@ -5,8 +5,8 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
 import Axios from "axios";
 import { useFormik } from "formik";
-import * as Formik from "formik";
 import { useMediaQuery } from "@mui/material";
+import { countryList } from "src/constant/country-list";
 
 export const Main = () => {
   const VisuallyHiddenInput = styled("input")({
@@ -64,12 +64,6 @@ export const Main = () => {
         alert("Profile Submitted Successfully");
         formik.resetForm();
       }
-
-      // handler({
-      //   message: res?.data?.status || "Login successful",
-      //   variant: res?.data?.error ? "success" : "error",
-      //   min: true,
-      // });
     });
   };
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -161,8 +155,6 @@ export const Main = () => {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                   >
-                    Java, dot net, testing, sap, business analyst, share point,
-                    others
                     <Mui.MenuItem value={10}>Java</Mui.MenuItem>
                     <Mui.MenuItem value={20}>Dot Net</Mui.MenuItem>
                     <Mui.MenuItem value={30}> Testing</Mui.MenuItem>
@@ -170,6 +162,23 @@ export const Main = () => {
                     <Mui.MenuItem value={30}> Business Analyst</Mui.MenuItem>
                     <Mui.MenuItem value={30}> Share Point</Mui.MenuItem>
                     <Mui.MenuItem value={30}> Others</Mui.MenuItem>
+                  </Mui.Select>
+                </Mui.FormControl>
+                <Mui.FormControl sx={{ m: 1, minWidth: 120 }}>
+                  <Mui.InputLabel id="demo-simple-select-helper-label">
+                    Select Country
+                  </Mui.InputLabel>
+                  <Mui.Select
+                    id="tech"
+                    name="tech"
+                    label="Tech"
+                    value={formik.values.tech}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  >
+                    {countryList?.map((item: any) => (
+                      <Mui.MenuItem value={item.name}>{item.name}</Mui.MenuItem>
+                    ))}
                   </Mui.Select>
                 </Mui.FormControl>
                 <Mui.TextField
