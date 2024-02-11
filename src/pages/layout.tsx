@@ -40,7 +40,6 @@ export const Layout = () => {
   ];
   const Navigate = Router.useNavigate();
   const PathUrl = window.location.pathname;
-  console.log(PathUrl, "path");
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null

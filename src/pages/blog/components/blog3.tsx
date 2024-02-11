@@ -45,7 +45,6 @@ export const Blog3 = () => {
             Understanding the Tech Talent Shortage:
           </Mui.Typography>
           {Blog.Blog3.Data?.map((item, index) => {
-            console.log(item, "pop");
             return (
               <Mui.Stack key={index} pb={2}>
                 <Mui.Stack sx={secStack}>

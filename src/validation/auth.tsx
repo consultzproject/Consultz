@@ -18,7 +18,7 @@ export const Contact = yup.object({
 
 export const Submit = yup.object({
   name: yup.string().required("Name is required"),
-  designation: yup.string().required("Name is required"),
+  designation: yup.string().required("designation is required"),
   email: yup
     .string()
     .email("Enter a valid email")
@@ -30,6 +30,5 @@ export const Submit = yup.object({
     .positive("A phone number can't start with a minus")
     .integer("A phone number can't include a decimal point")
     .required("A phone number is required"),
-  tech: yup.string().required(),
-  country: yup.string().required(),
+  location: yup.string().required(),
 });

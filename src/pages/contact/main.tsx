@@ -26,7 +26,7 @@ export const Main = () => {
 
   const handleSubmits = (values: any) => {
     const options = {
-      url: "https://seyalbackend.onrender.com/v1/user/contact",
+      url: "https://seyalbackend-5jdw.onrender.com/v1/user/contact",
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -40,7 +40,6 @@ export const Main = () => {
       },
     };
     Axios(options).then((res: any) => {
-      console.log(res, "res");
       if (res?.data?.error) {
         alert("Error");
       } else {

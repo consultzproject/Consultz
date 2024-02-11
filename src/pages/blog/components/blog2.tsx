@@ -41,7 +41,6 @@ export const Blog2 = () => {
           <Mui.Typography>{Blog.Blog2.para2}</Mui.Typography>
         </Mui.Stack>
         {Blog.Blog2.Data?.map((item, index) => {
-          console.log(item, "pop");
           return (
             <Mui.Stack key={index} pb={2}>
               <Mui.Stack sx={secStack}>

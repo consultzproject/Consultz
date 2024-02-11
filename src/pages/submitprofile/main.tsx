@@ -30,23 +30,22 @@ export const Main = () => {
       name: "",
       email: "",
       mobile: "",
+   
       designation: "",
-      tech: "",
-      country: "",
+      location: "",
       resume_url: "",
+      
     },
     validationSchema: validation.Submit,
     onSubmit: (values) => {
-      console.log(values, "check this");
       handleSubmits(values);
     },
   });
   const UploadResume = (val: any) => {
-    console.log(val?.target.files[0]);
     const formData = new FormData();
     formData.append("selectedFile", val);
     const options = {
-      url: "http://localhost:8080/v1/user/upload",
+      url: "https://seyalbackend-5jdw.onrender.com/v1/user/upload",
       method: "POST",
       headers: {
         "Content-Type": "multipart/form-data",
@@ -56,7 +55,6 @@ export const Main = () => {
       },
     };
     Axios(options).then((res: any) => {
-      console.log(res, "res");
       if (res?.data?.error) {
         alert("Error");
       } else {
@@ -66,9 +64,15 @@ export const Main = () => {
       }
     });
   };
+  const currentDate = new Date(Date.now()); // Create a Date object representing the current date and time
+
+  const date = currentDate.getDate().toString().padStart(2, '0'); // Get the day of the month (1-31) and convert it to a two-digit string
+  const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Get the month (0-11) and convert it to a two-digit string
+  const year = currentDate.getFullYear(); //
+
   const handleSubmits = (values: any) => {
-    const options = {
-      url: "http://localhost:8080/v1/user/resume",
+        const options = {
+      url: "https://seyalbackend-5jdw.onrender.com/v1/user/resume",
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -79,13 +83,12 @@ export const Main = () => {
         email: values.email,
         mobile: values.mobile,
         designation: values.designation,
-        tech: values.tech,
-        country: values.country,
+        location: values.location,
         resume_url: resumeFile,
+        createdDate:`${year}-${month}-${date}`
       },
     };
     Axios(options).then((res: any) => {
-      console.log(res, "res");
       if (res?.data?.error) {
         alert("Error");
       } else {
@@ -172,13 +175,13 @@ export const Main = () => {
                     Tech
                   </Mui.InputLabel>
                   <Mui.Select
-                    id="tech"
-                    name="tech"
+                    id="designation"
+                    name="designation"
                     label="Tech"
-                    value={formik.values.tech}
+                    value={formik.values.designation}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    error={formik.touched.tech && Boolean(formik.errors.tech)}
+                    error={formik.touched.designation && Boolean(formik.errors.designation)}
                   >
                     <Mui.MenuItem value="Java">Java</Mui.MenuItem>
                     <Mui.MenuItem value="Dot Net">Dot Net</Mui.MenuItem>
@@ -194,9 +197,9 @@ export const Main = () => {
                     </Mui.MenuItem>
                     <Mui.MenuItem value="Others"> Others</Mui.MenuItem>
                   </Mui.Select>
-                  <Mui.FormHelperText error={formik.touched.tech}>
+                  <Mui.FormHelperText error={formik.touched.designation}>
                     <>
-                      {formik.touched.tech && formik.errors.tech
+                      {formik.touched.designation && formik.errors.designation
                         ? "select Tech"
                         : ""}
                     </>
@@ -204,17 +207,17 @@ export const Main = () => {
                 </Mui.FormControl>
                 <Mui.FormControl sx={{ m: 1, minWidth: 120 }}>
                   <Mui.InputLabel id="demo-simple-select-helper-label">
-                    Select Country
+                    Country
                   </Mui.InputLabel>
                   <Mui.Select
-                    id="country"
-                    name="country"
+                    id="location"
+                    name="location"
                     label="Country"
-                    value={formik.values.country}
+                    value={formik.values.location}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     error={
-                      formik.touched.country && Boolean(formik.errors.country)
+                      formik.touched.location && Boolean(formik.errors.location)
                     }
                   >
                     {countryList?.map((item: any) => (
@@ -223,15 +226,15 @@ export const Main = () => {
                       </Mui.MenuItem>
                     ))}
                   </Mui.Select>
-                  <Mui.FormHelperText error={formik.touched.country}>
+                  <Mui.FormHelperText error={formik.touched.location}>
                     <>
-                      {formik.touched.country && formik.errors.country
+                      {formik.touched.location && formik.errors.location
                         ? "select country"
                         : ""}
                     </>
                   </Mui.FormHelperText>
                 </Mui.FormControl>
-                <Mui.TextField
+                {/* <Mui.TextField
                   id="designation"
                   name="designation"
                   label="Designation"
@@ -245,7 +248,7 @@ export const Main = () => {
                   helperText={
                     formik.touched.designation && formik.errors.designation
                   }
-                />
+                /> */}
               </Mui.Stack>
               <Mui.Button
                 component="label"

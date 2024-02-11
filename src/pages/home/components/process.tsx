@@ -130,7 +130,7 @@ export const Process = () => {
               <Mui.Stack sx={{ alignItems: "start" }}>
                 <Mui.Typography
                   sx={{
-                    fontSize: "20px",
+                    fontSize: "22px",
                     fontFamily: "urbanist",
                     textAlign: "start",
                   }}
@@ -138,7 +138,7 @@ export const Process = () => {
                   {label.title}
                 </Mui.Typography>
                 <Mui.Typography
-                  sx={{ fontSize: "15px", textAlign: "start", color: "grey" }}
+                  sx={{ fontSize: "18px", textAlign: "start", color: "grey" }}
                 >
                   {label.content}
                 </Mui.Typography>
