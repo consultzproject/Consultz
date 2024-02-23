@@ -8,6 +8,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Logo from "src/assets/Logo.png";
+import { useMediaQuery } from "@mui/material";
 
 export const AppBar = () => {
   const Pages = [
@@ -40,6 +41,7 @@ export const AppBar = () => {
   ];
   const Navigate = Router.useNavigate();
   const PathUrl = window.location.pathname;
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -75,6 +77,7 @@ export const AppBar = () => {
   React.useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
   });
+
   return (
     <Mui.AppBar
       sx={{
@@ -86,7 +89,7 @@ export const AppBar = () => {
       <Mui.Container maxWidth="xl">
         <Mui.Toolbar disableGutters>
           {/* laptop */}
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           {/* 
           <Mui.Typography
             variant="h5"
@@ -101,7 +104,10 @@ export const AppBar = () => {
             Consultz.
           </Mui.Typography> */}
           <Mui.Stack>
-            <img src={Logo} style={{ width: "100px", height: "100px" }} />
+            <img
+              src={Logo}
+              style={{ width: isMobile ? "150px" : "100px", height: "100px" }}
+            />
           </Mui.Stack>
           <Mui.Stack
             direction="row"
@@ -166,22 +172,7 @@ export const AppBar = () => {
           </Mui.Stack>
 
           {/* mobile */}
-          <Mui.Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          ></Mui.Typography>
+
           <Mui.Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -189,7 +180,7 @@ export const AppBar = () => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              // color="red"
             >
               <MenuIcon />
             </IconButton>
