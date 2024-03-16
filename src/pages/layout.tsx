@@ -44,16 +44,13 @@ export const Layout = () => {
     null
   );
 
-
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
 
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
 
   const [headerColor, setHeaderColor] = React.useState("grey !important");
 
@@ -63,9 +60,14 @@ export const Layout = () => {
       : setHeaderColor("grey !important");
   };
   // Similar to componentDidMount and componentDidUpdate:
+  const { pathname } = Router.useLocation();
+
   React.useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
-  });
+    // if (!/\/p2p\/\w+\/(buy|sell)$/g.test(pathname)) {
+    window.scrollTo(0, 0);
+    // }
+  }, [pathname]);
 
   return (
     <div>
