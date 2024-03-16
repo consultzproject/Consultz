@@ -1,5 +1,4 @@
 import * as Mui from "@mui/material";
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import AddIcon from "@mui/icons-material/Add";
 import useMediaQuery from "@mui/material/useMediaQuery";
 

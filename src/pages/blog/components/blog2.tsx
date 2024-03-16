@@ -1,4 +1,3 @@
-import React from "react";
 import * as Mui from "@mui/material";
 import * as Blog from "./content";
 import Image2 from "src/assets/blog2.jpeg";

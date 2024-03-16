@@ -22,8 +22,8 @@ export const Service_Content = {
   imageheader: "Have a project in mind?",
   imagetitle: "Do not hesitate to say ",
   // officename: "Office Name",
-  officeaddress: "Avenue Ariane 4/411, Woluwe Saint Lambert, Brussel 1200",
+  officeaddress: "Avenue de Arts 56, 1000 Brussels",
   officemailid: "hr@seyal.eu",
-  officenumber: "+32465957230",
+  officenumber: "+32496863676",
   // footerContent: "- 2023 CONSULTZ CO. -",
 };

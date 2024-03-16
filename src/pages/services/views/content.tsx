@@ -5,7 +5,6 @@ import Service1 from "src/assets/services/IT Talent Management.svg";
 import Service2 from "src/assets/services/International Business Consulting.svg";
 import Service3 from "src/assets/services/Project Out Sourcing.svg";
 import Service4 from "src/assets/services/Tech Consulting.svg";
-import Service5 from "src/assets/6.webp";
 import AddIcon from "@mui/icons-material/Add";
 import * as MuiIcons from "@mui/icons-material";
 import useMediaQuery from "@mui/material/useMediaQuery";

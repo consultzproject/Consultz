@@ -1,4 +1,3 @@
-import React from "react";
 import * as Common from "src/pages/common";
 import * as Mui from "@mui/material";
 import Banner from "src/assets/testimonials/banner.svg";

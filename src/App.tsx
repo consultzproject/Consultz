@@ -4,9 +4,9 @@ import * as Router from "react-router-dom";
 
 function App() {
   return (
-    <Router.BrowserRouter>
+    <Router.HashRouter>
       <Routes.Main />
-    </Router.BrowserRouter>
+    </Router.HashRouter>
   );
 }
 

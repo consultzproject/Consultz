@@ -3,13 +3,10 @@ import Image1 from "src/assets/contactus/Contact us.svg";
 import * as Common from "src/pages/common";
 import Axios from "axios";
 import { useFormik } from "formik";
-import * as Formik from "formik";
-import * as Providers from "src/providers";
 import * as validation from "src/validation";
 import { useMediaQuery } from "@mui/material";
 
 export const Main = () => {
-  const handler = Providers.useCustomHandler;
 
   const formik = useFormik({
     initialValues: {

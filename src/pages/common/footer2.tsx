@@ -1,4 +1,3 @@
-import React from "react";
 import * as Mui from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Service3 from "src/assets/home/Footer Banner.svg";
@@ -69,7 +68,7 @@ export const Footer2 = () => {
             }}
             onClick={() => navigate("/contact")}
           >
-            Let`s Talk
+            Let's Talk
           </Mui.Button>
         </Mui.Box>
       </div>

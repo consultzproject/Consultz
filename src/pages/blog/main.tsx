@@ -2,10 +2,8 @@ import * as Mui from "@mui/material";
 import Image1 from "src/assets/blog1.jpeg";
 import Image2 from "src/assets/blog2.jpeg";
 import Image3 from "src/assets/blog3.jpeg";
-import * as MuiIcons from "@mui/icons-material";
 import * as Router from "react-router-dom";
 import * as Common from "src/pages/common";
-import * as Pages from "src/pages";
 
 export const Main = () => {
   const navigate = Router.useNavigate();

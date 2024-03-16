@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "src/assets/home/Home Rolling Banner.svg";
 import * as Mui from "@mui/material";
 

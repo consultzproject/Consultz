@@ -1,7 +1,5 @@
-import React from "react";
 import * as Mui from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 // import Img1 from "src/assets/1.jpg";
 import Img2 from "src/assets/home/Mission Banner.svg";
 import Img3 from "src/assets/home/Vision Banner.svg";
@@ -13,7 +11,7 @@ export const Expertise = () => {
     {
       name: "Mission",
       content:
-        "At Seyal.io, our mission is to elevate businesses by leveraging the wide spread talent pool across the globe. We provide tailored consulting services, guiding organizations to implement, optimize, and evolve the businesses. Through strategic partnerships, continuous innovation, and a commitment to excellence, we aim to reshape the future of the workforce, driving efficiency, engagement, and success for our clients.",
+        "At Seyal, our mission is to elevate businesses by leveraging the wide spread talent pool across the globe. We provide tailored consulting services, guiding organizations to implement, optimize, and evolve the businesses. Through strategic partnerships, continuous innovation, and a commitment to excellence, we aim to reshape the future of the workforce, driving efficiency, engagement, and success for our clients.",
       img: Img2,
       ProjectImplementation: "60",
       PerformanceImprovement: "70",

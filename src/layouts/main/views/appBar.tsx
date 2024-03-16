@@ -1,7 +1,6 @@
 import React from "react";
 import * as Router from "react-router-dom";
 import * as Mui from "@mui/material";
-import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -46,32 +45,26 @@ export const AppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
+
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+
   const [headerColor, setHeaderColor] = React.useState(
-    "transparent !important"
+    "white !important"
   );
 
   const listenScrollEvent = () => {
     window.scrollY > 6
       ? setHeaderColor("white !important")
-      : setHeaderColor("transparent !important");
+      : setHeaderColor("white !important");
   };
   // Similar to componentDidMount and componentDidUpdate:
   React.useEffect(() => {
@@ -122,7 +115,7 @@ export const AppBar = () => {
                   onClick={() => Navigate(page.path)}
                   sx={{
                     my: 2,
-                    color: window.scrollY > 6 ? "black" : "white",
+                    color: window.scrollY > 6 ? "black" : "black",
                     display: "block",
                     textTransform: "capitalize",
                     background: PathUrl.includes(page.path) ? "green" : "",
