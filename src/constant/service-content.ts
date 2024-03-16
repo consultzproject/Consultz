@@ -24,6 +24,6 @@ export const Service_Content = {
   // officename: "Office Name",
   officeaddress: "Avenue Ariane 4/411, Woluwe Saint Lambert, Brussel 1200",
   officemailid: "hr@seyal.eu",
-  officenumber: "04916030669",
+  officenumber: "+32465957230",
   // footerContent: "- 2023 CONSULTZ CO. -",
 };

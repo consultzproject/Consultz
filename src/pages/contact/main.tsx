@@ -115,7 +115,7 @@ export const Main = () => {
                       fontWeight={800}
                       fontSize={24}
                     >
-                      04916030669
+                      +32465957230
                     </Mui.Typography>
                   </Mui.Stack>
                 </Mui.Stack>
