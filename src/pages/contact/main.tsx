@@ -7,7 +7,6 @@ import * as validation from "src/validation";
 import { useMediaQuery } from "@mui/material";
 
 export const Main = () => {
-
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -71,7 +70,7 @@ export const Main = () => {
           sx={{
             position: "absolute",
             top: "0",
-            height: "100vh",
+            height: "80vh",
             overflow: { xs: "visible", md: "auto" },
             width: "100%",
           }}
