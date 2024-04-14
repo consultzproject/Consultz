@@ -31,4 +31,6 @@ export const Submit = yup.object({
     .integer("A phone number can't include a decimal point")
     .required("A phone number is required"),
   location: yup.string().required(),
+  roles: yup.string().required(),
+
 });

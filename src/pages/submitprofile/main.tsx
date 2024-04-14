@@ -32,6 +32,7 @@ export const Main = () => {
       mobile: "",
    
       designation: "",
+      roles:"",
       location: "",
       resume_url: "",
       
@@ -83,6 +84,7 @@ export const Main = () => {
         email: values.email,
         mobile: values.mobile,
         designation: values.designation,
+        roles: values.roles,
         location: values.location,
         resume_url: resumeFile,
         createdDate:`${year}-${month}-${date}`
@@ -172,42 +174,81 @@ export const Main = () => {
                 />
                 <Mui.FormControl sx={{ m: 1, minWidth: 120 }}>
                   <Mui.InputLabel id="demo-simple-select-helper-label">
-                    Tech
+                    Technology
                   </Mui.InputLabel>
                   <Mui.Select
                     id="designation"
                     name="designation"
-                    label="Tech"
+                    label="Technology"
                     value={formik.values.designation}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     error={formik.touched.designation && Boolean(formik.errors.designation)}
                   >
                     <Mui.MenuItem value="Java">Java</Mui.MenuItem>
-                    <Mui.MenuItem value="Dot Net">Dot Net</Mui.MenuItem>
+                    <Mui.MenuItem value="Dot Net">Dotnet</Mui.MenuItem>
                     <Mui.MenuItem value="Testing"> Testing</Mui.MenuItem>
-                    <Mui.MenuItem value="Sap"> Sap</Mui.MenuItem>
-                    <Mui.MenuItem value="Business Analyst">
+                    <Mui.MenuItem value="Devops">Devops</Mui.MenuItem>
+                    <Mui.MenuItem value="Front-end">Front-end</Mui.MenuItem>
+                    <Mui.MenuItem value="SAP"> SAP</Mui.MenuItem>
+                    <Mui.MenuItem value="SAP"> Salesforce</Mui.MenuItem>
+                    <Mui.MenuItem value="Python"> Python</Mui.MenuItem>
+                    {/* <Mui.MenuItem value="Business Analyst">
                       {" "}
                       Business Analyst
-                    </Mui.MenuItem>
-                    <Mui.MenuItem value="Share Point">
+                    </Mui.MenuItem> */}
+                    <Mui.MenuItem value=" M365/SharePoint/Powerplatform">
                       {" "}
-                      Share Point
+                      M365/SharePoint/Powerplatform
                     </Mui.MenuItem>
                     <Mui.MenuItem value="Others"> Others</Mui.MenuItem>
                   </Mui.Select>
                   <Mui.FormHelperText error={formik.touched.designation}>
                     <>
                       {formik.touched.designation && formik.errors.designation
-                        ? "select Tech"
+                        ? "Select Techology"
                         : ""}
                     </>
                   </Mui.FormHelperText>
                 </Mui.FormControl>
                 <Mui.FormControl sx={{ m: 1, minWidth: 120 }}>
                   <Mui.InputLabel id="demo-simple-select-helper-label">
-                    Country
+                    Roles
+                  </Mui.InputLabel>
+                  <Mui.Select
+                    id="roles"
+                    name="roles"
+                    label="Roles"
+                    value={formik.values.roles}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    error={formik.touched.roles && Boolean(formik.errors.roles)}
+                  >
+                    <Mui.MenuItem value="Developer">Developer</Mui.MenuItem>
+                    <Mui.MenuItem value="Tester">Tester</Mui.MenuItem>
+                    <Mui.MenuItem value="DevOps Engineer">DevOps Engineer</Mui.MenuItem>
+                    <Mui.MenuItem value="Scrum Master">Scrum Master</Mui.MenuItem>
+                    <Mui.MenuItem value="Product Owner"> Product Owner</Mui.MenuItem>
+                    <Mui.MenuItem value="Project manager"> Project manager</Mui.MenuItem>
+                    <Mui.MenuItem value="Bussiness Analyst"> Bussiness Analyst</Mui.MenuItem>
+                    <Mui.MenuItem value=" Architect">
+                     
+                      Architect
+                    </Mui.MenuItem>
+                    <Mui.MenuItem value="Data scientist/Analyst"> Data scientist/Analyst</Mui.MenuItem>
+                    <Mui.MenuItem value="Others"> Others</Mui.MenuItem>
+                  </Mui.Select>
+                  <Mui.FormHelperText error={formik.touched.roles}>
+                    <>
+                      {formik.touched.roles && formik.errors.roles
+                        ? "Select Roles"
+                        : ""}
+                    </>
+                  </Mui.FormHelperText>
+                </Mui.FormControl>
+                <Mui.FormControl sx={{ m: 1, minWidth: 120 }}>
+                  <Mui.InputLabel id="demo-simple-select-helper-label">
+                    Current Location
                   </Mui.InputLabel>
                   <Mui.Select
                     id="location"
@@ -229,7 +270,7 @@ export const Main = () => {
                   <Mui.FormHelperText error={formik.touched.location}>
                     <>
                       {formik.touched.location && formik.errors.location
-                        ? "select country"
+                        ? "Select Country"
                         : ""}
                     </>
                   </Mui.FormHelperText>
