@@ -5,15 +5,18 @@ export const Contact = yup.object({
   email: yup
     .string()
     .email("Enter a valid email")
-    .required("Email is required"),
+    .required("Email is required")
+    .matches(
+      /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i,
+      "Enter a valid email"
+    ), // Regex validation for email
   message: yup.string().required("Enter your message"),
   mobileno: yup
-    .number()
-    .min(5)
-    .typeError("That doesn't look like a phone number")
-    .positive("A phone number can't start with a minus")
-    .integer("A phone number can't include a decimal point")
-    .required("A phone number is required"),
+  .string()
+  .matches(/^[0-9]+$/, "Mobile must contain only numbers")
+  .min(10, "Mobile must be 10 characters")
+  .max(10, "Mobile must be 10 characters")
+  .required("Mobile is required"),
 });
 
 export const Submit = yup.object({
@@ -22,15 +25,19 @@ export const Submit = yup.object({
   email: yup
     .string()
     .email("Enter a valid email")
-    .required("Email is required"),
+    .required("Email is required")
+    .matches(
+      /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i,
+      "Enter a valid email"
+    ), // Regex validation for email
   mobile: yup
-    .number()
-    .min(5)
-    .typeError("That doesn't look like a phone number")
-    .positive("A phone number can't start with a minus")
-    .integer("A phone number can't include a decimal point")
-    .required("A phone number is required"),
+  .string()
+  .matches(/^[0-9]+$/, "Mobile must contain only numbers")
+  .min(10, "Mobile must be 10 characters")
+  .max(10, "Mobile must be 10 characters")
+  .required("Mobile is required"),
   location: yup.string().required(),
   roles: yup.string().required(),
+  exp: yup.string().required(),
 
 });

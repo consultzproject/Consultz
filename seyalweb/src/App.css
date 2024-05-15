@@ -1,0 +1,101 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+} */
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.animated-text {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.animated-text p {
+  margin: 0;
+  animation: typing 3s steps(20) infinite;
+}
+.imagezoom:hover {
+  animation: zoom-in-zoom-out 3s ease infinite;
+}
+
+#imagezoom {
+  /* margin: 20px; */
+  overflow: hidden; /* clip the excess when child gets bigger than parent */
+}
+#imagezoom img {
+  display: block;
+  transition: transform 0.5s; /* smoother zoom */
+}
+#imagezoom:hover img {
+  transform: scale(1.1);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+#fade-in {
+  animation: fadeIn 4s;
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

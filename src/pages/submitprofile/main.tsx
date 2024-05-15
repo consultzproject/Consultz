@@ -8,6 +8,8 @@ import { useFormik } from "formik";
 import { useMediaQuery } from "@mui/material";
 import { countryList } from "src/constant/country-list";
 import * as validation from "src/validation";
+import "react-phone-input-2/lib/bootstrap.css";
+
 import React from "react";
 
 export const Main = () => {
@@ -33,6 +35,7 @@ export const Main = () => {
    
       designation: "",
       roles:"",
+      exp:"",
       location: "",
       resume_url: "",
       
@@ -46,7 +49,7 @@ export const Main = () => {
     const formData = new FormData();
     formData.append("selectedFile", val);
     const options = {
-      url: "https://seyalbackend-5jdw.onrender.com/v1/user/upload",
+      url: "https://api.seyal.eu:8080/v1/user/upload",
       method: "POST",
       headers: {
         "Content-Type": "multipart/form-data",
@@ -60,7 +63,7 @@ export const Main = () => {
         alert("Error");
       } else {
         setResumeFile(res?.data);
-        alert("Profile Submitted Successfully");
+        alert("Resume Uploaded Successfully Click SUBMIT Now");
         // formik.resetForm();
       }
     });
@@ -73,7 +76,7 @@ export const Main = () => {
 
   const handleSubmits = (values: any) => {
         const options = {
-      url: "https://seyalbackend-5jdw.onrender.com/v1/user/resume",
+      url: "https://api.seyal.eu:8080/v1/user/resume",
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -86,6 +89,7 @@ export const Main = () => {
         designation: values.designation,
         roles: values.roles,
         location: values.location,
+        exp: values.exp,
         resume_url: resumeFile,
         createdDate:`${year}-${month}-${date}`
       },
@@ -161,6 +165,8 @@ export const Main = () => {
                   error={formik.touched.email && Boolean(formik.errors.email)}
                   helperText={formik.touched.email && formik.errors.email}
                 />
+
+
                 <Mui.TextField
                   id="mobile"
                   name="mobile"
@@ -168,7 +174,8 @@ export const Main = () => {
                   value={formik.values.mobile}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  type="number"
+                  type="text" // Change the type to "number"
+                  inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
                   error={formik.touched.mobile && Boolean(formik.errors.mobile)}
                   helperText={formik.touched.mobile && formik.errors.mobile}
                 />
@@ -207,6 +214,34 @@ export const Main = () => {
                     <>
                       {formik.touched.designation && formik.errors.designation
                         ? "Select Techology"
+                        : ""}
+                    </>
+                  </Mui.FormHelperText>
+                </Mui.FormControl>
+                <Mui.FormControl sx={{ m: 1, minWidth: 120 }}>
+                  <Mui.InputLabel id="demo-simple-select-helper-label">
+                    Experience
+                  </Mui.InputLabel>
+                  <Mui.Select
+                    id="exp"
+                    name="exp"
+                    label="Experience"
+                    value={formik.values.exp}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    error={formik.touched.exp && Boolean(formik.errors.exp)}
+                  >
+                    <Mui.MenuItem value="0-3 yrs">0-3 yrs</Mui.MenuItem>
+                    <Mui.MenuItem value="3-8 yrs">3-8 yrs</Mui.MenuItem>
+                    <Mui.MenuItem value="8-12 yrs"> 8-12 yrs</Mui.MenuItem>
+                    <Mui.MenuItem value="12-20 yrs">12-20 yrs</Mui.MenuItem>
+                    <Mui.MenuItem value="20+ yrs">20+ yrs</Mui.MenuItem>
+                   
+                  </Mui.Select>
+                  <Mui.FormHelperText error={formik.touched.designation}>
+                    <>
+                      {formik.touched.designation && formik.errors.designation
+                        ? "Select Experience"
                         : ""}
                     </>
                   </Mui.FormHelperText>
@@ -253,7 +288,7 @@ export const Main = () => {
                   <Mui.Select
                     id="location"
                     name="location"
-                    label="Country"
+                    label="Current Location"
                     value={formik.values.location}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}

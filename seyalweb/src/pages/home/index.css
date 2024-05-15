@@ -1,0 +1,115 @@
+#consultantmain {
+  height: 380px;
+  position: relative;
+  width: 100%;
+}
+#consultant {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+}
+
+/* .consultantmain:hover   */
+#consultantmain:hover > #consultant {
+  height: 70%;
+  transition: height 0.25s ease-in;
+}
+#consultantcontent {
+  position: absolute;
+  bottom: 50px;
+  transition: all 0.5s ease-in-out;
+  height: 0;
+}
+
+#consultantmain:hover > #consultantcontent {
+  height: 50px;
+  bottom: 40px;
+}
+
+.insightsFont {
+  text-align: right;
+  animation: left_to_right 7s infinite;
+  width: 100%;
+  font-size: 30px;
+}
+@keyframes left_to_right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+/* .insightsFont {
+  display: flex;
+  flex-direction: row !important;
+  color: white;
+  position: absolute;
+  top: 20%;
+  animation: scrolling-left1 10s linear infinite;
+}
+
+@keyframes scrolling-left1 {
+  0% {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+} */
+.container {
+  display: flex;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+  z-index: 9999;
+  position: absolute;
+  top: 30%;
+}
+
+.loop-text {
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0 0.5px;
+  color: rgb(255, 255, 255);
+  font-family: "urbanist" !important;
+}
+.loop-text {
+  animation: loopText 10s infinite linear;
+  color: rgb(255, 255, 255);
+}
+
+@keyframes loopText {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.examplediv {
+  /* height: 500px;
+  width: 500px; */
+  animation: zoom-in-zoom-out 3s ease-in-out infinite;
+}
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  /* 50% {
+    transform: scale(1.2, 1.2);
+  } */
+  100% {
+    transform: scale(1.1, 1.1);
+  }
+}
